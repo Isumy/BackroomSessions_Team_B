@@ -10,16 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+    //I DISABLED THIS VIEW CONTROLLER THAT WAY THIS IS NOT THE INITIAL VIEW.
+    //BECAUSE I SET UP THE CONTAINERCONTROLLER AS THE ROOT VIEW CONTROLLER IN THE APPDELEGATE FILE.
+    //THE REST OF THE VIEW CONTROLLERS SHOULD BE EMBEDED PROGRAMATICALLY TO THE CONTAINER VIEW CONTROLL
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+//WE SHOULD AVOID USING THE STORYBOARD AND WE SHOULD DO EVERYTHING PROGRAMATICALLY
+    
+    //Regards, Isumy
 }
 

@@ -13,6 +13,10 @@
 		BF2F15E82395A74600AF39C7 /* BackroomSessions_TeamB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF2F15E62395A74600AF39C7 /* BackroomSessions_TeamB.xcdatamodeld */; };
 		BF2F15EA2395A74600AF39C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2F15E92395A74600AF39C7 /* Assets.xcassets */; };
 		BF2F15ED2395A74600AF39C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2F15EB2395A74600AF39C7 /* LaunchScreen.storyboard */; };
+		BF9A0E532397F98F001CA797 /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A0E522397F98F001CA797 /* ContainerController.swift */; };
+		BF9A0E552397F9A0001CA797 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A0E542397F9A0001CA797 /* HomeController.swift */; };
+		BF9A0E572397F9B7001CA797 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A0E562397F9B7001CA797 /* MenuController.swift */; };
+		BF9A0E59239809AE001CA797 /* EventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A0E58239809AE001CA797 /* EventsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		BF2F15E92395A74600AF39C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF2F15EC2395A74600AF39C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF2F15EE2395A74600AF39C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF9A0E522397F98F001CA797 /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
+		BF9A0E542397F9A0001CA797 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		BF9A0E562397F9B7001CA797 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		BF9A0E58239809AE001CA797 /* EventsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,10 @@
 		BF2F15DE2395A74600AF39C7 /* BackroomSessions_TeamB */ = {
 			isa = PBXGroup;
 			children = (
+				BF9A0E512397F7FE001CA797 /* Utilities */,
+				BF9A0E502397F7F9001CA797 /* Model */,
+				BF9A0E4E2397F7E8001CA797 /* View */,
+				BF9A0E4D2397F7DB001CA797 /* Controller */,
 				BF2F15DF2395A74600AF39C7 /* AppDelegate.swift */,
 				BF2F15E12395A74600AF39C7 /* ViewController.swift */,
 				BF2F15E32395A74600AF39C7 /* Main.storyboard */,
@@ -65,6 +77,38 @@
 				BF2F15E62395A74600AF39C7 /* BackroomSessions_TeamB.xcdatamodeld */,
 			);
 			path = BackroomSessions_TeamB;
+			sourceTree = "<group>";
+		};
+		BF9A0E4D2397F7DB001CA797 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BF9A0E522397F98F001CA797 /* ContainerController.swift */,
+				BF9A0E542397F9A0001CA797 /* HomeController.swift */,
+				BF9A0E562397F9B7001CA797 /* MenuController.swift */,
+				BF9A0E58239809AE001CA797 /* EventsController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BF9A0E4E2397F7E8001CA797 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF9A0E502397F7F9001CA797 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF9A0E512397F7FE001CA797 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +186,10 @@
 				BF2F15E82395A74600AF39C7 /* BackroomSessions_TeamB.xcdatamodeld in Sources */,
 				BF2F15E22395A74600AF39C7 /* ViewController.swift in Sources */,
 				BF2F15E02395A74600AF39C7 /* AppDelegate.swift in Sources */,
+				BF9A0E532397F98F001CA797 /* ContainerController.swift in Sources */,
+				BF9A0E572397F9B7001CA797 /* MenuController.swift in Sources */,
+				BF9A0E59239809AE001CA797 /* EventsController.swift in Sources */,
+				BF9A0E552397F9A0001CA797 /* HomeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
