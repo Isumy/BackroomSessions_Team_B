@@ -14,6 +14,12 @@ class ContainerController: UIViewController{
     //Properties
     //this is created only one time
     var menuController: UIViewController!
+    //this is the controller shown on top of the ContainerController
+    var centerController: UIViewController!
+    //keeps track of wheter or not we are showing or hiding the menu.It is false 'coz when the app starts the menu is hiden.
+    var isExpanded = false
+    
+    
     //Init
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +34,11 @@ class ContainerController: UIViewController{
         
         let homeController = HomeController()
         homeController.delegate = self
-        let navigationController = UINavigationController(rootViewController: homeController)
+        centerController = UINavigationController(rootViewController: homeController)
         
-        view .addSubview(navigationController.view)
-        addChildViewController(navigationController)
-        navigationController.didMove(toParentViewController: self)
+        view .addSubview(centerController.view)
+        addChildViewController(centerController)
+        centerController.didMove(toParentViewController: self)
         
     }
     
@@ -48,10 +54,42 @@ class ContainerController: UIViewController{
             print("the menu controller was added...")
         }
     }
+    
+    //this function is to show the MenuController.
+    //it receive a boolean variable for whether or not we are show or hiding the menu
+    func showMenuCOntroller(shouldExpand: Bool){
+        if shouldExpand{
+            
+            //show menu with animation function to the right
+            UIView.animate(withDuration:0.3 ,delay: 0, usingSpringWithDamping: 0.8,initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+                
+                self.centerController.view.frame.origin.x = self.centerController.view.frame.width - 80
+                
+            },completion: nil )
+        }
+        else{
+            
+            //hide menu with animation function to the right
+            UIView.animate(withDuration:0.3 ,delay: 0, usingSpringWithDamping: 0.8,initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+                
+                self.centerController.view.frame.origin.x = 0
+                
+                },completion: nil )
+        }
+            
+     }
 }
+
 extension ContainerController: HomeControllerDelegate{
     
     func handleMenuToggle() {
-        configureMenuController()
+        
+        if !isExpanded{
+            configureMenuController()
+        }
+        
+        //every time the hamburguer button is pressed it changes the state of isExpanded to the oposite of what it was.
+        isExpanded = !isExpanded
+        showMenuCOntroller(shouldExpand: isExpanded)
     }
 }
