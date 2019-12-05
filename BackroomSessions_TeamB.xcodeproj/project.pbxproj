@@ -18,6 +18,7 @@
 		BF9A0E59239809AE001CA797 /* EventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A0E58239809AE001CA797 /* EventsController.swift */; };
 		BF9A0E5B2398B507001CA797 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A0E5A2398B507001CA797 /* Protocols.swift */; };
 		BF9A0E5F2398C257001CA797 /* MenuOptionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A0E5E2398C257001CA797 /* MenuOptionViewCell.swift */; };
+		BF9A0E612398CAA8001CA797 /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A0E602398CAA8001CA797 /* MenuOption.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		BF9A0E58239809AE001CA797 /* EventsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsController.swift; sourceTree = "<group>"; };
 		BF9A0E5A2398B507001CA797 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		BF9A0E5E2398C257001CA797 /* MenuOptionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionViewCell.swift; sourceTree = "<group>"; };
+		BF9A0E602398CAA8001CA797 /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		BF9A0E502397F7F9001CA797 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BF9A0E602398CAA8001CA797 /* MenuOption.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				BF2F15E02395A74600AF39C7 /* AppDelegate.swift in Sources */,
 				BF9A0E532397F98F001CA797 /* ContainerController.swift in Sources */,
 				BF9A0E572397F9B7001CA797 /* MenuController.swift in Sources */,
+				BF9A0E612398CAA8001CA797 /* MenuOption.swift in Sources */,
 				BF9A0E5F2398C257001CA797 /* MenuOptionViewCell.swift in Sources */,
 				BF9A0E59239809AE001CA797 /* EventsController.swift in Sources */,
 				BF9A0E552397F9A0001CA797 /* HomeController.swift in Sources */,
