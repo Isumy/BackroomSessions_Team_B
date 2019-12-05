@@ -64,7 +64,7 @@ class ContainerController: UIViewController{
             //show menu with animation function to the right
             UIView.animate(withDuration:0.3 ,delay: 0, usingSpringWithDamping: 0.8,initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
                 
-                self.centerController.view.frame.origin.x = self.centerController.view.frame.width - 80
+                self.centerController.view.frame.origin.x = self.centerController.view.frame.width - 220
                 
             },completion: nil )
         }
