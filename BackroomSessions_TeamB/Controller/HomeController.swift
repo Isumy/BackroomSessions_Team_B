@@ -39,7 +39,7 @@ class HomeController: UIViewController{
     
      @objc func handleMenuToggle() {
         //this code is executed when the hambuguer menu is pressed
-        delegate?.handleMenuToggle()
+        delegate?.handleMenuToggle(forMenuOption: nil)
     }
     
 }

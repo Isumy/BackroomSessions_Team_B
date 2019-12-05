@@ -9,6 +9,6 @@
 protocol HomeControllerDelegate{
     
     //the toggle is actually going to be handle by the ContainerController, that way the menuController can be added
-    func handleMenuToggle()
+    func handleMenuToggle(forMenuOption menuOption: MenuOption?)
 }
 

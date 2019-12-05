@@ -18,6 +18,8 @@ class MenuController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //Properties
     
     var menuTableView: UITableView!
+    //delegate to link menucontroller with actions in the menu
+    var delegate: HomeControllerDelegate?
     
      //Init
     override func viewDidLoad() {
@@ -68,6 +70,13 @@ class MenuController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let menuOption = MenuOption(rawValue: indexPath.row)
+        delegate?.handleMenuToggle(forMenuOption: menuOption)    
+        
+    }
 }
 
 

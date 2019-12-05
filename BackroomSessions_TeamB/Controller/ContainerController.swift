@@ -82,7 +82,7 @@ class ContainerController: UIViewController{
 
 extension ContainerController: HomeControllerDelegate{
     
-    func handleMenuToggle() {
+    func handleMenuToggle(forMenuOption menuOption: MenuOption?) {
         
         if !isExpanded{
             configureMenuController()
