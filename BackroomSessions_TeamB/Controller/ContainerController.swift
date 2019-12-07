@@ -75,7 +75,7 @@ class ContainerController: UIViewController{
                 
                 self.centerController.view.frame.origin.x = 0
                 
-                },completion: nil )
+            },completion: nil )
             
             UIView.animate(withDuration:0.3 ,delay: 0, usingSpringWithDamping: 0.8,initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
                 
@@ -88,8 +88,8 @@ class ContainerController: UIViewController{
                 self.didSelectMenuOption(menuOption: menuOption)
             }
         }
-            
-     }
+        
+    }
     
     //This function handles the options selected in the hamburguer menu
     //Here is where we go to the controller according to the option that was selected from the menu.

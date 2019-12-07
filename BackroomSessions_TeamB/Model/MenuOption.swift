@@ -31,7 +31,8 @@ enum MenuOption: Int, CustomStringConvertible{
     
     var image: UIImage {
         switch self {
-        case .Events: return UIImage(named: "icons8-Events") ?? UIImage()
+        case .Events:
+            return UIImage(named: "icons8-Events") ?? UIImage()
         case .Artist:
             return UIImage(named: "icons8-artist") ?? UIImage()
         case .Favorites:
