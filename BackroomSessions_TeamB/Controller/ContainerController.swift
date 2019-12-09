@@ -107,16 +107,21 @@ class ContainerController: UIViewController{
         case .Events:
             //Go to Event controller
             print("Show Events Controller")
-            //presenting events controller
+            //presenting Events controller
             let controller = EventsController()
             present(controller, animated: true, completion: nil)
         case .Artist:
             //Go to Artist controller
             print("Show Artist Controller")
-            
+            //presenting events controller
+            let controller = ArtistsController()
+            present(controller, animated: true, completion: nil)
         case .Favorites:
             //Go to Favorite controller
             print("Show Favorite")
+            let controller = FavoriteController()
+            present(controller, animated: true, completion: nil)
+            
         case .Registration:
             //Go to Registration controller
             print("Show Registrations" )

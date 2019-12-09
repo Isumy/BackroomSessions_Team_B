@@ -12,11 +12,17 @@ import UIKit
 class FavoriteController: UIViewController {
     
     // Properties
+    var delegate: HomeControllerDelegate?
+    //Init
+    
     override func viewDidLoad(){
         super.viewDidLoad()
+        
+        view.backgroundColor = .green
+        #imageLiteral(resourceName: "background")
     }
     
-    // Init
+   
     
     // Functions
     
