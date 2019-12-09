@@ -29,6 +29,14 @@ class ContainerController: UIViewController{
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation{
+        return .slide
+    }
+    
+    override var prefersStatusBarHidden: Bool{
+        return isExpanded
+    }
+    
     //Functions
     func configureHomeController(){
         
