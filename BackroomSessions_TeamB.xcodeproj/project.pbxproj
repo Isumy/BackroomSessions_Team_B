@@ -17,6 +17,7 @@
 		BF2F15E82395A74600AF39C7 /* BackroomSessions_TeamB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF2F15E62395A74600AF39C7 /* BackroomSessions_TeamB.xcdatamodeld */; };
 		BF2F15EA2395A74600AF39C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2F15E92395A74600AF39C7 /* Assets.xcassets */; };
 		BF2F15ED2395A74600AF39C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2F15EB2395A74600AF39C7 /* LaunchScreen.storyboard */; };
+		BF46DC53239ED3CA00145F23 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46DC52239ED3CA00145F23 /* SettingsController.swift */; };
 		BF9A0E532397F98F001CA797 /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A0E522397F98F001CA797 /* ContainerController.swift */; };
 		BF9A0E552397F9A0001CA797 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A0E542397F9A0001CA797 /* HomeController.swift */; };
 		BF9A0E572397F9B7001CA797 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A0E562397F9B7001CA797 /* MenuController.swift */; };
@@ -39,6 +40,7 @@
 		BF2F15E92395A74600AF39C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF2F15EC2395A74600AF39C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF2F15EE2395A74600AF39C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF46DC52239ED3CA00145F23 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		BF9A0E522397F98F001CA797 /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
 		BF9A0E542397F9A0001CA797 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		BF9A0E562397F9B7001CA797 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				BF9A0E572397F9B7001CA797 /* MenuController.swift in Sources */,
 				BF9A0E612398CAA8001CA797 /* MenuOption.swift in Sources */,
 				BF9A0E5F2398C257001CA797 /* MenuOptionViewCell.swift in Sources */,
+				BF46DC53239ED3CA00145F23 /* SettingsController.swift in Sources */,
 				BF9A0E59239809AE001CA797 /* EventsController.swift in Sources */,
 				2E68B96423995AAA00E7B0BB /* ArtistDetailController.swift in Sources */,
 				BF9A0E552397F9A0001CA797 /* HomeController.swift in Sources */,

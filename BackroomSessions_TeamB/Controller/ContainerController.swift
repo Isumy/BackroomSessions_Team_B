@@ -92,7 +92,6 @@ class ContainerController: UIViewController{
             }){(_) in
                 //unwrapping menuOtion in the next line
                 guard let menuOption = menuOption else {return}
-                
                 self.didSelectMenuOption(menuOption: menuOption)
             }
         }
@@ -108,9 +107,13 @@ class ContainerController: UIViewController{
         case .Events:
             //Go to Event controller
             print("Show Events Controller")
+            //presenting events controller
+            let controller = EventsController()
+            present(controller, animated: true, completion: nil)
         case .Artist:
             //Go to Artist controller
             print("Show Artist Controller")
+            
         case .Favorites:
             //Go to Favorite controller
             print("Show Favorite")
