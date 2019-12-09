@@ -12,6 +12,9 @@ import UIKit
 class EventsController: UIViewController{
     
     //Properties
+    //delegate to link menucontroller with actions in the menu
+    var delegate: HomeControllerDelegate?
+    
     override func viewDidLoad(){
         super.viewDidLoad()
     }
