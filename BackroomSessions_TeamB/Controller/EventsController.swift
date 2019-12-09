@@ -14,6 +14,8 @@ class EventsController: UIViewController{
     //Properties
     override func viewDidLoad(){
         super.viewDidLoad()
+        
+        view.backgroundColor = .blue
     }
     
     //Init
