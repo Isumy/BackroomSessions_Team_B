@@ -13,6 +13,14 @@ class EventsController: UIViewController{
     
     //Properties
     
+    let backgroundImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.image = UIImage(named: "background")
+        
+        return imageView
+    }()
+    
     //created this delegate to link menucontroller with actions in the menu
     var delegate: HomeControllerDelegate?
     
@@ -31,8 +39,8 @@ class EventsController: UIViewController{
     //This method configure the way the UI for the EventsViewController will look like.
     func configureEventsUI(){
         
-        let background = UIColor(patternImage: UIImage(named: "background") ?? UIImage())
-        view.backgroundColor = background
+        //  let background = UIColor(patternImage: UIImage(named: "background") ?? UIImage())
+        //view.backgroundColor = background
         
         //Embedding Navigatoion Controller to Events ViewController
         navigationController?.navigationBar.barTintColor = .darkGray
@@ -41,6 +49,11 @@ class EventsController: UIViewController{
         
         navigationItem.title = "Events"
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "icons8-back-white").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleDismissVC))
+        
+        
+        //Setting backgroun image view
+        view.addSubview(backgroundImageView)
+        backgroundImageView.setAnchor(top: view.topAnchor , left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
         
     }
     
