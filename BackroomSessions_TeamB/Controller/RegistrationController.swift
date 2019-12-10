@@ -6,28 +6,24 @@
 //  Copyright © 2019 Isumy Aguila. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-//Necessary properties of an Artist object
-//var name: String
-//var email: String
-//var phoneNumber: String
-//var youtubeLink: URL?
-//var soundcloudLink: URL?
-//var websiteLink: URL?
-//var picture: UIImage?
-
-class RegistrationController: UIViewController{
+class RegistrationController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
     var registrationView: RegistrationView!
     
-    //Properties
     //delegate to link menucontroller with actions in the menu
     var delegate: HomeControllerDelegate?
     
+    // Init
+    override func loadView() {
+        super.loadView()
+        setupView()
+    }
+    
     override func viewDidLoad(){
         super.viewDidLoad()
-        setupView()
+        configureRegistrationUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,8 +31,9 @@ class RegistrationController: UIViewController{
     }
     
     func setupView(){
-        let mainView = RegistrationView(frame: self.view.frame)
-        self.registrationView = mainView
+        self.registrationView = RegistrationView(frame: self.view.frame)
+        self.registrationView.registerAction = registerPressed
+        self.registrationView.profileImageButtonAction = profileImageButtonPressed
         self.view.addSubview(registrationView)
         NSLayoutConstraint.activate([
             registrationView.topAnchor.constraint(equalTo: self.view.topAnchor),
@@ -46,9 +43,74 @@ class RegistrationController: UIViewController{
             ])
     }
     
-    //Init
+    func configureRegistrationUI(){
+        
+        let background = UIColor(patternImage: UIImage(named: "background") ?? UIImage())
+        view.backgroundColor = background
+        
+        //Embedding Navigatoion Controller to Events ViewController
+        navigationController?.navigationBar.barTintColor = .darkGray
+        
+        navigationController?.navigationBar.barStyle = .black
+        
+        navigationItem.title = "Registration"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "icons8-back-white").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleDismissVC))
+        
+    }
     
-    //Functions
+    //Selector function to dismiss the ViewController
+    @objc func handleDismissVC(){
+        dismiss(animated: true, completion: nil)
+    }
     
+    func registerPressed(){
+        print("register pressed")
+    }
     
+    func profileImageButtonPressed(){
+        print("profileImageButton pressed")
+        showImagePickerControllerActionSheet()
+    }
+    
+    func showImagePickerControllerActionSheet(){
+        let alert = UIAlertController(title: "Profile Picture", message: "Please select a source type", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Camera", style: .default , handler:{ (UIAlertAction)in
+                print("Camera selected")
+                self.showImagePickerController(sourceType: "Camera")
+            }))
+        
+        alert.addAction(UIAlertAction(title: "Photo Library", style: .default , handler:{ (UIAlertAction)in
+                print("Photo Library selected")
+                self.showImagePickerController(sourceType: "Photo Library")
+            }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler:nil))
+        
+        self.present(alert, animated: true, completion: {
+            print("completion block")
+        })
+    }
+    
+    func showImagePickerController(sourceType: String){
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
+        if(sourceType == "Camera"){
+            imagePickerController.sourceType = .camera
+        }else{
+            imagePickerController.sourceType = .photoLibrary
+        }
+        present(imagePickerController, animated:true, completion: nil)
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
+        if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage{
+            self.registrationView.profileImageView.image = editedImage
+        }else if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
+            self.registrationView.profileImageView.image = originalImage
+        }
+        dismiss(animated: true, completion: nil)
+    }
 }
+

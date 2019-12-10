@@ -117,13 +117,13 @@ class ContainerController: UIViewController{
             present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
         case .Favorites:
             //Go to Favorite controller
-            print("Show Favorite")
+            print("Show Favorites Controller")
             let controller = FavoriteController()
             present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
             
         case .Registration:
             //Go to Registration controller
-            print("Show Registrations" )
+            print("Show Registration Controller")
             let controller = RegistrationController()
             present(controller, animated: true, completion: nil)
         }

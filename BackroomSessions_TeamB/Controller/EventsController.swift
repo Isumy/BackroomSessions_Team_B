@@ -34,7 +34,7 @@ class EventsController: UIViewController{
         let background = UIColor(patternImage: UIImage(named: "background") ?? UIImage())
         view.backgroundColor = background
         
-        //Embedding Navigatoion Controller to Events ViewController
+        //Embedding Navigation Controller to Events ViewController
         navigationController?.navigationBar.barTintColor = .darkGray
         
         navigationController?.navigationBar.barStyle = .black

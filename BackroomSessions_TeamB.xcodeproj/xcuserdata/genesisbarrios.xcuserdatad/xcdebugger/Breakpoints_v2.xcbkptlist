@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackroomSessions_TeamB/View/RegistrationView.swift"
+            timestampString = "597660561.573059"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "registerButton"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackroomSessions_TeamB/Controller/RegistrationController.swift"
+            timestampString = "597660561.5735281"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "showImagePickerControllerActionSheet()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackroomSessions_TeamB/Controller/RegistrationController.swift"
+            timestampString = "597660561.573602"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "showImagePickerController(sourceType:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackroomSessions_TeamB/Controller/RegistrationController.swift"
+            timestampString = "597660561.573671"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "showImagePickerControllerActionSheet()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BackroomSessions_TeamB.RegistrationController.showImagePickerControllerActionSheet() -&gt; ()"
+                  moduleName = "BackroomSessions_TeamB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/genesisbarrios/Desktop/Fall%202019/COP%204655%20-%20Mobile%20App%20Dev/final%20project/BackroomSessions_Team_B/BackroomSessions_TeamB/Controller/RegistrationController.swift"
+                  timestampString = "597659789.177358"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "1014">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 () -&gt; () in BackroomSessions_TeamB.RegistrationController.showImagePickerControllerActionSheet() -&gt; ()"
+                  moduleName = "BackroomSessions_TeamB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/genesisbarrios/Desktop/Fall%202019/COP%204655%20-%20Mobile%20App%20Dev/final%20project/BackroomSessions_Team_B/BackroomSessions_TeamB/Controller/RegistrationController.swift"
+                  timestampString = "597659789.182613"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackroomSessions_TeamB/Controller/RegistrationController.swift"
+            timestampString = "597660561.573734"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "showImagePickerControllerActionSheet()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BackroomSessions_TeamB.RegistrationController.showImagePickerControllerActionSheet() -&gt; ()"
+                  moduleName = "BackroomSessions_TeamB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/genesisbarrios/Desktop/Fall%202019/COP%204655%20-%20Mobile%20App%20Dev/final%20project/BackroomSessions_Team_B/BackroomSessions_TeamB/Controller/RegistrationController.swift"
+                  timestampString = "597659798.3329411"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "1014">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 () -&gt; () in BackroomSessions_TeamB.RegistrationController.showImagePickerControllerActionSheet() -&gt; ()"
+                  moduleName = "BackroomSessions_TeamB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/genesisbarrios/Desktop/Fall%202019/COP%204655%20-%20Mobile%20App%20Dev/final%20project/BackroomSessions_Team_B/BackroomSessions_TeamB/Controller/RegistrationController.swift"
+                  timestampString = "597659798.336781"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
