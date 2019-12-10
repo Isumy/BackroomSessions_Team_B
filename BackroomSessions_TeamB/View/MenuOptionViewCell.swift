@@ -37,6 +37,7 @@ class MenuOptionViewCell: UITableViewCell{
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         backgroundColor = .darkGray
+        selectionStyle = .none
         
         //adding the view for icon of the hamberguer menu option
         addSubview(iconImageView)
