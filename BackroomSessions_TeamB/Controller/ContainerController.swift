@@ -125,7 +125,7 @@ class ContainerController: UIViewController{
             //Go to Registration controller
             print("Show Registrations" )
             let controller = RegistrationController()
-            present(controller, animated: true, completion: nil)
+            present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
         }
         
     }
