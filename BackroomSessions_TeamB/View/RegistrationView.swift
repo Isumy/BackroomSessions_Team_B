@@ -26,13 +26,13 @@ class RegistrationView: UIView{
     
     func setup(){
         backgroundColor = UIColor(patternImage: UIImage(named: "background") ?? UIImage())
-        addSubview(nameTextField)
-        addSubview(emailTextField)
-        addSubview(phoneTextField)
-        addSubview(soundcloudLinkTextField)
-        addSubview(youtubeLinkTextField)
-        addSubview(websiteLinkTextField)
-        addSubview(registerButton)
+        let stackView = mainStackView()
+        addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        stackView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        stackView.topAnchor.constraint(equalTo: topAnchor).isActive = true
     }
     
     let nameTextField: UITextField = {
@@ -149,7 +149,7 @@ class RegistrationView: UIView{
     func mainStackView() -> UIStackView{
         let stackView = UIStackView(arrangedSubviews: [nameTextField, emailTextField, phoneTextField, soundcloudLinkTextField, youtubeLinkTextField, websiteLinkTextField, registerButton])
         stackView.axis = .vertical
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fillEqually
         stackView.spacing = 10
         return stackView
     }
