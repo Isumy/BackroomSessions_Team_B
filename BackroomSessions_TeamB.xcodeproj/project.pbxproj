@@ -14,6 +14,7 @@
 		2E68B96423995AAA00E7B0BB /* ArtistDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E68B96323995AAA00E7B0BB /* ArtistDetailController.swift */; };
 		AB55890C239EE471004EB2DE /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55890B239EE471004EB2DE /* RegistrationController.swift */; };
 		AB55890E239EE9AE004EB2DE /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55890D239EE9AE004EB2DE /* RegistrationView.swift */; };
+		BF184521239F568000C97AC9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF184520239F568000C97AC9 /* Extensions.swift */; };
 		BF2F15E02395A74600AF39C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2F15DF2395A74600AF39C7 /* AppDelegate.swift */; };
 		BF2F15E52395A74600AF39C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2F15E32395A74600AF39C7 /* Main.storyboard */; };
 		BF2F15E82395A74600AF39C7 /* BackroomSessions_TeamB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF2F15E62395A74600AF39C7 /* BackroomSessions_TeamB.xcdatamodeld */; };
@@ -37,6 +38,7 @@
 		2E68B96323995AAA00E7B0BB /* ArtistDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailController.swift; sourceTree = "<group>"; };
 		AB55890B239EE471004EB2DE /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		AB55890D239EE9AE004EB2DE /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		BF184520239F568000C97AC9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BF2F15DC2395A74600AF39C7 /* BackroomSessions_TeamB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackroomSessions_TeamB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2F15DF2395A74600AF39C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF2F15E42395A74600AF39C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				BF9A0E5A2398B507001CA797 /* Protocols.swift */,
+				BF184520239F568000C97AC9 /* Extensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF2F15E82395A74600AF39C7 /* BackroomSessions_TeamB.xcdatamodeld in Sources */,
+				BF184521239F568000C97AC9 /* Extensions.swift in Sources */,
 				BF2F15E02395A74600AF39C7 /* AppDelegate.swift in Sources */,
 				BF9A0E532397F98F001CA797 /* ContainerController.swift in Sources */,
 				BF9A0E572397F9B7001CA797 /* MenuController.swift in Sources */,
