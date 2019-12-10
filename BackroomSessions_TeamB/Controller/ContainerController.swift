@@ -103,7 +103,6 @@ class ContainerController: UIViewController{
     func didSelectMenuOption(menuOption: MenuOption){
         switch menuOption{
             
-            
         case .Events:
             //Go to Event controller
             print("Show Events Controller")
@@ -125,6 +124,8 @@ class ContainerController: UIViewController{
         case .Registration:
             //Go to Registration controller
             print("Show Registrations" )
+            let controller = RegistrationController()
+            present(controller, animated: true, completion: nil)
         }
         
     }
