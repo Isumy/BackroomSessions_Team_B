@@ -18,13 +18,32 @@ class FavoriteController: UIViewController {
     override func viewDidLoad(){
         super.viewDidLoad()
         
-        view.backgroundColor = .green
-        #imageLiteral(resourceName: "background")
+        //view.backgroundColor = .green
+        configureFavoriteUI()
     }
     
    
     
     // Functions
+    //This method configure the way the UI for the EventsViewController will look like.
+    func configureFavoriteUI(){
+        
+        let background = UIColor(patternImage: UIImage(named: "background") ?? UIImage())
+        view.backgroundColor = background
+        
+        //Embedding Navigatoion Controller to Events ViewController
+        navigationController?.navigationBar.barTintColor = .darkGray
+        
+        navigationController?.navigationBar.barStyle = .black
+        
+        navigationItem.title = "Favorites"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "icons8-back-white").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleDismissVC))
+        
+    }
     
+    //Selector function to dismiss the ViewController
+    @objc func handleDismissVC(){
+        dismiss(animated: true, completion: nil)
+    }
     
 }
