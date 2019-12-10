@@ -31,7 +31,7 @@ class HomeController: UIViewController{
         
         navigationController?.navigationBar.barTintColor = .darkGray
         navigationController?.navigationBar.barStyle = .black
-        
+        // navigationController?.navigationBar.setBackgroundImage(#imageLiteral(resourceName: "BRS_LOGO_SINGLE"), for: .top, barMetrics: .compact)// = true
         navigationItem.title = "Backroom Sessions"
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_menu_white_3x").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleMenuToggle))
         
