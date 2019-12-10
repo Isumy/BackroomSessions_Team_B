@@ -37,6 +37,28 @@ class ArtistsController: UIViewController, UICollectionViewDelegate, UICollectio
     override func viewDidLoad(){
         super.viewDidLoad()
         configureCollectionView()
+        configureArtistsUI()
+    }
+    
+    //This method configure the way the UI for the EventsViewController will look like.
+    func configureArtistsUI(){
+        
+        let background = UIColor(patternImage: UIImage(named: "background") ?? UIImage())
+        view.backgroundColor = background
+        
+        //Embedding Navigatoion Controller to Events ViewController
+        navigationController?.navigationBar.barTintColor = .darkGray
+        
+        navigationController?.navigationBar.barStyle = .black
+        
+        navigationItem.title = "Artists"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "icons8-back-white").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleDismissVC))
+        
+    }
+    
+    //Selector function to dismiss the ViewController
+    @objc func handleDismissVC(){
+        dismiss(animated: true, completion: nil)
     }
     
    /* override func viewDidAppear(_ animated: Bool) {
