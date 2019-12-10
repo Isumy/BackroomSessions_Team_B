@@ -18,7 +18,6 @@ class RegistrationController: UIViewController, UIImagePickerControllerDelegate,
     // Init
     override func loadView() {
         super.loadView()
-        setupView()
     }
     
     override func viewDidLoad(){

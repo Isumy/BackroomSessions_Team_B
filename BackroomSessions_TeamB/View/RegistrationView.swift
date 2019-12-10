@@ -6,15 +6,6 @@
 //  Copyright © 2019 Isumy Aguila. All rights reserved.
 //
 
-//Necessary properties of an Artist object
-//var name: String
-//var email: String
-//var phoneNumber: String
-//var youtubeLink: URL?
-//var soundcloudLink: URL?
-//var websiteLink: URL?
-//var picture: UIImage?
-
 import UIKit
 
 class RegistrationView: UIView, UITextFieldDelegate{
@@ -45,12 +36,12 @@ class RegistrationView: UIView, UITextFieldDelegate{
         scrollView.addSubview(websiteLinkTextField)
         scrollView.addSubview(registerButton)
         
-        self.nameTextField.delegate = self
-        self.emailTextField.delegate = self
-        self.phoneTextField.delegate = self
-        self.soundcloudLinkTextField.delegate = self
-        self.youtubeLinkTextField.delegate = self
-        self.websiteLinkTextField.delegate = self
+        nameTextField.delegate = self
+        emailTextField.delegate = self
+        phoneTextField.delegate = self
+        soundcloudLinkTextField.delegate = self
+        youtubeLinkTextField.delegate = self
+        websiteLinkTextField.delegate = self
     }
     
     let scrollView: UIScrollView = {
@@ -62,13 +53,13 @@ class RegistrationView: UIView, UITextFieldDelegate{
     }()
     
     let profileImageView: UIImageView = {
-        let iv = UIImageView(frame: CGRect(x: UIScreen.main.bounds.width / 2 - 100, y: 30.0, width:200, height: 200.0))
+        let iv = UIImageView(frame: CGRect(x: UIScreen.main.bounds.width / 2 - 100, y: 5.0, width:200, height: 200.0))
         iv.contentMode = .scaleAspectFit
         return iv
     }()
     
     let profileImageButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: UIScreen.main.bounds.width / 2 - 100, y: 30.0, width:200, height: 200.0))
+        let button = UIButton(frame: CGRect(x: UIScreen.main.bounds.width / 2 - 100, y: 5.0, width:200, height: 200.0))
         
         let attributedString = NSMutableAttributedString(attributedString: NSAttributedString(string: "+", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 25), .foregroundColor: UIColor.white]))
         button.setAttributedTitle(attributedString, for: .normal)
@@ -85,7 +76,7 @@ class RegistrationView: UIView, UITextFieldDelegate{
     }
     
     let nameTextField: UITextField = {
-        let tf = UITextField(frame: CGRect(x: 5.0, y: 235.0, width:UIScreen.main.bounds.width - 10, height: 60.0))
+        let tf = UITextField(frame: CGRect(x: 5.0, y: 210.0, width:UIScreen.main.bounds.width - 10, height: 60.0))
         tf.borderStyle = .none
         tf.layer.cornerRadius = 5
         tf.backgroundColor = UIColor(red:216/255, green:216/255, blue:216/255, alpha: 0.4)
@@ -95,13 +86,13 @@ class RegistrationView: UIView, UITextFieldDelegate{
         
         //placeholder
         var placeholder = NSMutableAttributedString()
-        placeholder = NSMutableAttributedString(attributedString: NSAttributedString(string: "Name", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20), .foregroundColor: UIColor(white: 1, alpha: 0.8)]))
+        placeholder = NSMutableAttributedString(attributedString: NSAttributedString(string: "Name", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20), .foregroundColor: UIColor(white: 1, alpha: 0.7)]))
         tf.attributedPlaceholder = placeholder
         return tf
     }()
     
     let emailTextField: UITextField = {
-        let tf = UITextField(frame: CGRect(x: 5.0, y: 300.0, width:UIScreen.main.bounds.width - 10, height: 60.0))
+        let tf = UITextField(frame: CGRect(x: 5.0, y: 275.0, width:UIScreen.main.bounds.width - 10, height: 60.0))
         tf.borderStyle = .none
         tf.layer.cornerRadius = 5
         tf.backgroundColor = UIColor(red:216/255, green:216/255, blue:216/255, alpha: 0.4)
@@ -112,13 +103,13 @@ class RegistrationView: UIView, UITextFieldDelegate{
         
         //placeholder
         var placeholder = NSMutableAttributedString()
-        placeholder = NSMutableAttributedString(attributedString: NSAttributedString(string: "Email", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20), .foregroundColor: UIColor(white: 1, alpha: 0.8)]))
+        placeholder = NSMutableAttributedString(attributedString: NSAttributedString(string: "Email", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20), .foregroundColor: UIColor(white: 1, alpha: 0.7)]))
         tf.attributedPlaceholder = placeholder
         return tf
     }()
     
     let phoneTextField: UITextField = {
-        let tf = UITextField(frame: CGRect(x: 5.0, y: 365.0, width:UIScreen.main.bounds.width - 10, height: 60.0))
+        let tf = UITextField(frame: CGRect(x: 5.0, y: 340.0, width:UIScreen.main.bounds.width - 10, height: 60.0))
         tf.borderStyle = .none
         tf.layer.cornerRadius = 5
         tf.backgroundColor = UIColor(red:216/255, green:216/255, blue:216/255, alpha: 0.4)
@@ -129,13 +120,13 @@ class RegistrationView: UIView, UITextFieldDelegate{
         
         //placeholder
         var placeholder = NSMutableAttributedString()
-        placeholder = NSMutableAttributedString(attributedString: NSAttributedString(string: "Phone Number", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20), .foregroundColor: UIColor(white: 1, alpha: 0.8)]))
+        placeholder = NSMutableAttributedString(attributedString: NSAttributedString(string: "Phone Number", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20), .foregroundColor: UIColor(white: 1, alpha: 0.7)]))
         tf.attributedPlaceholder = placeholder
         return tf
     }()
     
     let youtubeLinkTextField: UITextField = {
-        let tf = UITextField(frame: CGRect(x: 5.0, y: 430.0, width:UIScreen.main.bounds.width - 10, height: 60.0))
+        let tf = UITextField(frame: CGRect(x: 5.0, y: 405.0, width:UIScreen.main.bounds.width - 10, height: 60.0))
         tf.borderStyle = .none
         tf.layer.cornerRadius = 5
         tf.backgroundColor = UIColor(red:216/255, green:216/255, blue:216/255, alpha: 0.4)
@@ -146,13 +137,13 @@ class RegistrationView: UIView, UITextFieldDelegate{
         
         //placeholder
         var placeholder = NSMutableAttributedString()
-        placeholder = NSMutableAttributedString(attributedString: NSAttributedString(string: "Youtube Link", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20), .foregroundColor: UIColor(white: 1, alpha: 0.8)]))
+        placeholder = NSMutableAttributedString(attributedString: NSAttributedString(string: "Youtube Link", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20), .foregroundColor: UIColor(white: 1, alpha: 0.7)]))
         tf.attributedPlaceholder = placeholder
         return tf
     }()
     
     let soundcloudLinkTextField: UITextField = {
-        let tf = UITextField(frame: CGRect(x: 5.0, y: 495.0, width:UIScreen.main.bounds.width - 10, height: 60.0))
+        let tf = UITextField(frame: CGRect(x: 5.0, y: 470.0, width:UIScreen.main.bounds.width - 10, height: 60.0))
         tf.borderStyle = .none
         tf.layer.cornerRadius = 5
         tf.backgroundColor = UIColor(red:216/255, green:216/255, blue:216/255, alpha: 0.4)
@@ -163,13 +154,13 @@ class RegistrationView: UIView, UITextFieldDelegate{
         
         //placeholder
         var placeholder = NSMutableAttributedString()
-        placeholder = NSMutableAttributedString(attributedString: NSAttributedString(string: "Soundcloud Link", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20), .foregroundColor: UIColor(white: 1, alpha: 0.8)]))
+        placeholder = NSMutableAttributedString(attributedString: NSAttributedString(string: "Soundcloud Link", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20), .foregroundColor: UIColor(white: 1, alpha: 0.7)]))
         tf.attributedPlaceholder = placeholder
         return tf
     }()
     
     let websiteLinkTextField: UITextField = {
-        let tf = UITextField(frame: CGRect(x: 5.0, y: 560.0, width:UIScreen.main.bounds.width - 10, height: 60.0))
+        let tf = UITextField(frame: CGRect(x: 5.0, y: 535.0, width:UIScreen.main.bounds.width - 10, height: 60.0))
         tf.borderStyle = .none
         tf.layer.cornerRadius = 5
         tf.backgroundColor = UIColor(red:216/255, green:216/255, blue:216/255, alpha: 0.4)
@@ -180,13 +171,13 @@ class RegistrationView: UIView, UITextFieldDelegate{
         
         //placeholder
         var placeholder = NSMutableAttributedString()
-        placeholder = NSMutableAttributedString(attributedString: NSAttributedString(string: "Website Link", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20), .foregroundColor: UIColor(white: 1, alpha: 0.8)]))
+        placeholder = NSMutableAttributedString(attributedString: NSAttributedString(string: "Website Link", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20), .foregroundColor: UIColor(white: 1, alpha: 0.7)]))
         tf.attributedPlaceholder = placeholder
         return tf
     }()
     
     let registerButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 5.0, y: 625.0, width:UIScreen.main.bounds.width - 10, height: 60.0))
+        let button = UIButton(frame: CGRect(x: 5.0, y: 600.0, width:UIScreen.main.bounds.width - 10, height: 60.0))
         let attributedString = NSMutableAttributedString(attributedString: NSAttributedString(string: "Register", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 19), .foregroundColor: UIColor.white]))
         button.setAttributedTitle(attributedString, for: .normal)
         button.layer.cornerRadius = 5
@@ -208,6 +199,5 @@ class RegistrationView: UIView, UITextFieldDelegate{
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
 }
