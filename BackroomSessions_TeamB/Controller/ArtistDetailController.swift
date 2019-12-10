@@ -47,4 +47,5 @@ class ArtistDetailController: UIViewController {
         artistNameLabel.textAlignment = .center
     }
     
+    
 }
