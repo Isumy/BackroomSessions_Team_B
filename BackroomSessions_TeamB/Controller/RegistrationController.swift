@@ -28,10 +28,12 @@ class RegistrationController: UIViewController{
     override func viewDidLoad(){
         super.viewDidLoad()
         setupView()
+        configureRegistrationsUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
     }
     
     func setupView(){
@@ -49,6 +51,25 @@ class RegistrationController: UIViewController{
     //Init
     
     //Functions
+    //This method configure the way the UI for the EventsViewController will look like.
+    func configureRegistrationsUI(){
+        
+        let background = UIColor(patternImage: UIImage(named: "background") ?? UIImage())
+        view.backgroundColor = background
+        
+        //Embedding Navigatoion Controller to Events ViewController
+        navigationController?.navigationBar.barTintColor = .darkGray
+        
+        navigationController?.navigationBar.barStyle = .black
+        
+        navigationItem.title = "Registrations"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "icons8-back-white").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleDismissVC))
+        
+    }
     
+    //Selector function to dismiss the ViewController
+    @objc func handleDismissVC(){
+        dismiss(animated: true, completion: nil)
+    }
     
 }
