@@ -19,7 +19,7 @@ class ArtistDetailController: UIViewController {
     // Init
     override func viewDidLoad(){
         super.viewDidLoad()
-        configureDetailView()
+        //configureDetailView()
     }
     
     // Functions
@@ -29,7 +29,7 @@ class ArtistDetailController: UIViewController {
         artistImage = UIImage()
         
         artistNameLabel.text = artist.name
-        artistImage = artist.picture
+        //artistImage = artist.picture
         
         let background = UIColor(patternImage: UIImage(named: "background") ?? UIImage())
         view.backgroundColor = background

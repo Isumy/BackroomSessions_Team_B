@@ -16,11 +16,26 @@ class ArtistsController: UIViewController, UICollectionViewDelegate, UICollectio
     // Properties
     var artistsCollectionView: UICollectionView!
     var delegate: HomeControllerDelegate?       // Links controller with actions in the menu
-    let allArtists = ArtistDB.sharedInstance    // Enables use of the ArtistDB model
+    
+    //let allArtists = ArtistDB.sharedInstance    // Enables use of the ArtistDB model
+    
+    let persistenceManager: PersistenceManager!
+    
+    init(persistenceManager: PersistenceManager){
+        self.persistenceManager = persistenceManager
+        super.init(nibName:nil, bundle:nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    var allArtists: [Artist] = []
     
     // Init
     override func loadView() {
         super.loadView()
+        allArtists = persistenceManager.fetch(Artist.self)
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -38,6 +53,8 @@ class ArtistsController: UIViewController, UICollectionViewDelegate, UICollectio
         super.viewDidLoad()
         configureCollectionView()
         configureArtistsUI()
+        
+        persistenceManager?.save()
     }
     
     //This method configure the way the UI for the EventsViewController will look like.
@@ -64,10 +81,10 @@ class ArtistsController: UIViewController, UICollectionViewDelegate, UICollectio
    /* override func viewDidAppear(_ animated: Bool) {
         let footer = UIImageView(image: UIImage(named: "footer-logo"))
         footer.translatesAutoresizingMaskIntoConstraints = false
-        
+     
         view.insertSubview(footer, aboveSubview: artistsCollectionView)
         artistsCollectionView.insertSubview(footer, at: 0)
-        
+     
 //        footer.topAnchor.constraint(equalTo: self.artistsCollectionView.bottomAnchor).isActive = true
 //        footer.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         footer.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
@@ -123,7 +140,7 @@ class ArtistsController: UIViewController, UICollectionViewDelegate, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailViewController = ArtistDetailController()
-        detailViewController.viewArtist = allArtists.getAllArtists()[indexPath.row]
+        detailViewController.viewArtist = allArtists[indexPath.row]
         present(detailViewController, animated: true, completion: nil)
     }
     
@@ -133,7 +150,7 @@ class ArtistsController: UIViewController, UICollectionViewDelegate, UICollectio
     
     // Displays the collectionView with the number of artists
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return allArtists.numOfArtists()
+        return allArtists.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -142,7 +159,7 @@ class ArtistsController: UIViewController, UICollectionViewDelegate, UICollectio
         
         /* Set the text on the cell with the name of the artist that
          is at the nth index of the artists list, where n = row */
-        let artist = allArtists.getAllArtists()[indexPath.row]
+        let artist = allArtists[indexPath.row]
         
         // Display the Artist name in each cell, going through every Artist
         cell.artistName.text = artist.name
@@ -158,3 +175,4 @@ class ArtistsController: UIViewController, UICollectionViewDelegate, UICollectio
     }
     
 }
+

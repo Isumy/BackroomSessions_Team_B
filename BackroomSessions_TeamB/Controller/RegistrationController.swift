@@ -15,6 +15,17 @@ class RegistrationController: UIViewController, UIImagePickerControllerDelegate,
     //delegate to link menucontroller with actions in the menu
     var delegate: HomeControllerDelegate?
     
+    let persistenceManager: PersistenceManager!
+    
+    init(persistenceManager: PersistenceManager){
+        self.persistenceManager = persistenceManager
+        super.init(nibName:nil, bundle:nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // Init
     override func loadView() {
         super.loadView()
@@ -24,6 +35,7 @@ class RegistrationController: UIViewController, UIImagePickerControllerDelegate,
         super.viewDidLoad()
         setupView()
         configureRegistrationUI()
+        persistenceManager?.save()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,9 +56,22 @@ class RegistrationController: UIViewController, UIImagePickerControllerDelegate,
             ])
     }
     
+    //create core data artist 
     func registerPressed(){
         print("register pressed")
+        let artist = Artist(context: persistenceManager.context)
+        artist.profilePicture = UIImageJPEGRepresentation(registrationView.profileImageView.image!, 1)! as NSData
+        
+        artist.name = registrationView.nameTextField.text
+        artist.email = registrationView.emailTextField.text
+        artist.phoneNumber = registrationView.phoneTextField.text
+        artist.youtubeLink = NSURL(string: registrationView.youtubeLinkTextField.text!)! as URL
+        artist.soundcloudLink = NSURL(string: registrationView.soundcloudLinkTextField.text!)! as URL
+        artist.websiteLink = NSURL(string: registrationView.websiteLinkTextField.text!)! as URL
+   
+        persistenceManager.save()
     }
+    
     //Functions
     func configureRegistrationUI(){
         

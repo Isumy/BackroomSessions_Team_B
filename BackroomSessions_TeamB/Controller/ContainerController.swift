@@ -18,8 +18,7 @@ class ContainerController: UIViewController{
     var centerController: UIViewController!
     //keeps track of wheter or not we are showing or hiding the menu.It is false 'coz when the app starts the menu is hiden.
     var isExpanded = false
-    
-    
+
     //Init
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +46,6 @@ class ContainerController: UIViewController{
         view .addSubview(centerController.view)
         addChildViewController(centerController)
         centerController.didMove(toParentViewController: self)
-        
     }
     
     func configureMenuController(){
@@ -113,7 +111,7 @@ class ContainerController: UIViewController{
             //Go to Artist controller
             print("Show Artist Controller")
             //presenting events controller
-            let controller = ArtistsController()
+            let controller = ArtistsController(persistenceManager: PersistenceManager.shared)
             present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
         case .Favorites:
             //Go to Favorite controller
@@ -124,7 +122,7 @@ class ContainerController: UIViewController{
         case .Registration:
             //Go to Registration controller
             print("Show Registration Controller")
-            let controller = RegistrationController()
+            let controller = RegistrationController(persistenceManager: PersistenceManager.shared)
             present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
         }
         
