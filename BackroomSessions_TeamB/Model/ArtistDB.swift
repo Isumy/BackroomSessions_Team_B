@@ -42,16 +42,16 @@ final class ArtistDB {
     // Prevent direct property access
     private var artists: [ArtistModel] = [
         ArtistModel(name: "Yoshi Thompkins", email: "thompkinsyoshi@gmail.com", phoneNumber: "", youtubeLink: URL(string: "https://www.youtube.com/channel/UCqq7C6JakuUUT2SNS0KFW9g"), soundcloudLink: URL(string: "https://soundcloud.com/toshjompkins"), websiteLink: nil),
-        ArtistModel(name: "Bause Mason", email: "", phoneNumber: "", youtubeLink: nil, soundcloudLink: nil, websiteLink: nil),
-        ArtistModel(name: "Pink Tacos NYC", email: "", phoneNumber: "", youtubeLink: nil, soundcloudLink: nil, websiteLink: nil),
-        ArtistModel(name: "Crack/Daniels", email: "", phoneNumber: "", youtubeLink: nil, soundcloudLink: nil, websiteLink: nil),
-        ArtistModel(name: "Luna", email: "", phoneNumber: "", youtubeLink: nil, soundcloudLink: nil, websiteLink: nil),
-        ArtistModel(name: "Josty", email: "", phoneNumber: "", youtubeLink: nil, soundcloudLink: nil, websiteLink: nil),
-        ArtistModel(name: "Shisui", email: "", phoneNumber: "", youtubeLink: nil, soundcloudLink: nil, websiteLink: nil),
-        ArtistModel(name: "Khadijat", email: "", phoneNumber: "", youtubeLink: nil, soundcloudLink: nil, websiteLink: nil),
-        ArtistModel(name: "Covi Sky", email: "", phoneNumber: "", youtubeLink: nil, soundcloudLink: nil, websiteLink: nil),
-        ArtistModel(name: "DKIRK", email: "", phoneNumber: "", youtubeLink: nil, soundcloudLink: nil, websiteLink: nil),
-        ArtistModel(name: "Sandy Melara", email: "", phoneNumber: "", youtubeLink: nil, soundcloudLink: nil, websiteLink: nil)
+        ArtistModel(name: "Bause Mason", email: "bausemason@gmail.com", phoneNumber: "", youtubeLink: URL(string: "https://www.youtube.com/channel/UCkbAZZXEFh3h6KXk4wpAe6A"), soundcloudLink: URL(string: "https://soundcloud.com/bausemason"), websiteLink: URL(string: "https://www.backroomsessionsmia.com/")),
+        ArtistModel(name: "Mahogany Purple", email: "", phoneNumber: "", youtubeLink: nil, soundcloudLink: nil, websiteLink: URL(string: "https://linktr.ee/MahoganyPurple")),
+        ArtistModel(name: "Crack/Daniels", email: "", phoneNumber: "", youtubeLink: URL(string: "https://www.youtube.com/channel/UCYG3yZlwPXQPW9GeYMVmo3g"), soundcloudLink: URL(string: "https://soundcloud.com/crack_daniels/"), websiteLink: nil),
+        ArtistModel(name: "Luna", email: "plsreachluna@gmail.com", phoneNumber: "", youtubeLink: nil, soundcloudLink: URL(string: "https://soundcloud.com/lunabelunar"), websiteLink: nil),
+        ArtistModel(name: "Josty", email: "", phoneNumber: "", youtubeLink: nil, soundcloudLink: URL(string: "https://soundcloud.com/johnathon-micheal-stacey"), websiteLink: nil),
+        ArtistModel(name: "HONNA", email: "hannaho9494@gmail.com", phoneNumber: "", youtubeLink: URL(string: "https://www.youtube.com/channel/UCZrvG6C3b86PomOZPabr9YA"), soundcloudLink: nil, websiteLink: URL(string: "https://www.facebook.com/honnamusic/")),
+        ArtistModel(name: "Khadijat", email: "", phoneNumber: "", youtubeLink: URL(string: "https://www.youtube.com/channel/UCBB06m51QrEBNL7gly8M9YA"), soundcloudLink: nil, websiteLink: nil),
+        ArtistModel(name: "Covi Sky", email: "", phoneNumber: "", youtubeLink: nil, soundcloudLink: URL(string: "https://soundcloud.com/covisky"), websiteLink: nil),
+        ArtistModel(name: "DKIRK", email: "", phoneNumber: "", youtubeLink: URL(string: "https://www.youtube.com/dkirk94"), soundcloudLink: URL(string: "https://soundcloud.com/dkirk94"), websiteLink: URL(string: "https://www.facebook.com/dkirkmusic/")),
+        ArtistModel(name: "Genesis Barrios", email: "genmiami@gmail.com", phoneNumber: "", youtubeLink: URL(string: "https://www.youtube.com/channel/UC6UqDNOGyJ5lZoY716lRIog"), soundcloudLink: URL(string: "https://soundcloud.com/genesisbarrios"), websiteLink: URL(string: "https://genesisbarrios.github.io/"))
     ]
     
     private init () {

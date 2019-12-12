@@ -45,6 +45,7 @@ class ArtistsController: UIViewController, UICollectionViewDelegate, UICollectio
             collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             ])
         self.artistsCollectionView = collectionView
+        initializeArtists()
     }
     
     override func viewDidLoad(){
@@ -53,33 +54,11 @@ class ArtistsController: UIViewController, UICollectionViewDelegate, UICollectio
         configureArtistsUI()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        let modelArtists = ArtistDB.sharedInstance
-        let context = persistenceManager.context
-        
-        if modelArtists.numOfArtists() != allArtists.count {
-            for artist in modelArtists.getAllArtists() {
-                let newArtist = Artist(context: context)
-                
-                // If appropriate, configure the new managed object.
-                newArtist.name = artist.name
-                newArtist.email = artist.email
-                newArtist.phoneNumber = artist.phoneNumber
-                newArtist.profilePicture = UIImageJPEGRepresentation(artist.picture!, 1)! as NSData
-                newArtist.youtubeLink = artist.youtubeLink
-                newArtist.soundcloudLink = artist.soundcloudLink
-                newArtist.websiteLink = artist.websiteLink
-            }
-        }
-        
-        persistenceManager.save()
-    }
-    
     //This method configure the way the UI for the EventsViewController will look like.
     func configureArtistsUI(){
         
-        let background = UIColor(patternImage: UIImage(named: "background") ?? UIImage())
-        view.backgroundColor = background
+//        let background = UIColor(patternImage: UIImage(named: "background") ?? UIImage())
+//        view.backgroundColor = background
         
         //Embedding Navigatoion Controller to Events ViewController
         navigationController?.navigationBar.barTintColor = .darkGray
@@ -116,7 +95,7 @@ class ArtistsController: UIViewController, UICollectionViewDelegate, UICollectio
         self.artistsCollectionView.dataSource = self
         self.artistsCollectionView.delegate = self
         self.artistsCollectionView.backgroundColor = UIColor(patternImage: UIImage(named: "background") ?? UIImage())
-        
+
         // Register the view cell
         artistsCollectionView.register(ArtistCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
@@ -160,11 +139,10 @@ class ArtistsController: UIViewController, UICollectionViewDelegate, UICollectio
         let detailViewController = ArtistDetailController()
         detailViewController.viewArtist = allArtists[indexPath.row]
         detailViewController.delegate = self.delegate
+        detailViewController.rootController = self
         DispatchQueue.main.async {
-            detailViewController.rootController = self
+            self.navigationController!.pushViewController(detailViewController, animated: true)
         }
-        
-        self.navigationController!.pushViewController(detailViewController, animated: true)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -195,5 +173,35 @@ class ArtistsController: UIViewController, UICollectionViewDelegate, UICollectio
         cell.contentView.layer.masksToBounds = false
         
         return cell
+    }
+    
+    func initializeArtists() {
+        let modelArtists = ArtistDB.sharedInstance
+        let context = persistenceManager.context
+        
+        if modelArtists.numOfArtists() != allArtists.count {
+            for artist in modelArtists.getAllArtists() {
+                let newArtist = Artist(context: context)
+                
+                // If appropriate, configure the new managed object.
+                newArtist.name = artist.name
+                newArtist.email = artist.email
+                newArtist.phoneNumber = artist.phoneNumber
+                newArtist.profilePicture = UIImageJPEGRepresentation(artist.picture!, 1)! as NSData
+                newArtist.youtubeLink = artist.youtubeLink
+                newArtist.soundcloudLink = artist.soundcloudLink
+                newArtist.websiteLink = artist.websiteLink
+            }
+        }
+        
+        // Save the context.
+        do {
+            try context.save()
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
     }
 }

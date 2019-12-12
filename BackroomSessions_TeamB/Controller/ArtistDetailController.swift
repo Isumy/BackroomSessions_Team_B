@@ -24,7 +24,6 @@ class ArtistDetailController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad(){
         super.viewDidLoad()
         configureDetailUI()
-        configureDetailView()
     }
     
     // Functions
@@ -42,6 +41,8 @@ class ArtistDetailController: UIViewController, UIImagePickerControllerDelegate,
         
         navigationItem.title = artist.name
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "icons8-back-white").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleDismissVC))
+        
+        configureDetailView()
     }
     
     //Selector function to dismiss the ViewController
@@ -50,15 +51,12 @@ class ArtistDetailController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     func textStyle(_ label: UILabel) {
-        label.font = UIFont(name: "Avenir", size: 25)
+        label.font = UIFont(name: "Avenir", size: 20)
         label.textColor = .white
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        label.lineBreakMode = .byClipping
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.allowsDefaultTighteningForTruncation = true
+        label.textAlignment = .left
+        label.numberOfLines = 3
+        label.lineBreakMode = .byWordWrapping
         label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.25
     }
     
     func configureDetailView() {
@@ -74,43 +72,43 @@ class ArtistDetailController: UIViewController, UIImagePickerControllerDelegate,
         
         let artistNameLabel: UILabel = {
             let label = UILabel(frame: CGRect(x: 0, y: 275.0, width:UIScreen.main.bounds.width, height: 60.0))
-            label.textColor = .white
-            label.text = "Name:\(artist.name ?? "")"
+            label.text = "Name: \(artist.name ?? "")"
+            
             return label
         }()
         
         let artistEmailLabel: UILabel = {
             let label = UILabel(frame: CGRect(x: 0, y: 340.0, width:UIScreen.main.bounds.width, height: 60.0))
-            label.textColor = .white
-            label.text = "Email:\(artist.email ?? "")"
+            label.text = "Email: \(artist.email ?? "")"
+            
             return label
         }()
         
         let artistNumberLabel: UILabel = {
             let label = UILabel(frame: CGRect(x: 0, y: 405.0, width:UIScreen.main.bounds.width, height: 60.0))
-            label.textColor = .white
-            label.text = "Number:\(artist.phoneNumber ?? "")"
+            label.text = "Number: \(artist.phoneNumber ?? "")"
+            
             return label
         }()
         
         let artistYoutubeLabel: UILabel = {
             let label = UILabel(frame: CGRect(x: 0, y: 470.0, width:UIScreen.main.bounds.width, height: 60.0))
-            label.textColor = .white
-            label.text = "Youtube Link:\(artist.youtubeLink?.relativeString ?? "")"
+            label.text = "Youtube Link: \(artist.youtubeLink?.relativeString ?? "")"
+            
             return label
         }()
         
         let artistSoundcloudLabel: UILabel = {
             let label = UILabel(frame: CGRect(x: 0, y: 535.0, width:UIScreen.main.bounds.width, height: 60.0))
-            label.textColor = .white
-            label.text = "Soundcloud Link:\(artist.soundcloudLink?.relativeString ?? "")"
+            label.text = "Soundcloud Link: \(artist.soundcloudLink?.relativeString ?? "")"
+            
             return label
         }()
         
         let artistWebsiteLabel: UILabel = {
             let label = UILabel(frame: CGRect(x: 0, y: 600.0, width:UIScreen.main.bounds.width, height: 60.0))
-            label.textColor = .white
-            label.text = "Website:\(artist.websiteLink?.relativeString ?? "")"
+            label.text = "Website: \(artist.websiteLink?.relativeString ?? "")"
+            
             return label
         }()
         
@@ -121,6 +119,13 @@ class ArtistDetailController: UIViewController, UIImagePickerControllerDelegate,
         view.addSubview(artistYoutubeLabel)
         view.addSubview(artistSoundcloudLabel)
         view.addSubview(artistWebsiteLabel)
+        
+        textStyle(artistNameLabel)
+        textStyle(artistEmailLabel)
+        textStyle(artistNumberLabel)
+        textStyle(artistYoutubeLabel)
+        textStyle(artistSoundcloudLabel)
+        textStyle(artistWebsiteLabel)
         
         //let viewsDictionary = ["label1": artistEmailLabel, "label2": artistNumberLabel, "label3": artistYoutubeLabel, "label4": artistSoundcloudLabel, "label5": artistWebsiteLabel]
         
