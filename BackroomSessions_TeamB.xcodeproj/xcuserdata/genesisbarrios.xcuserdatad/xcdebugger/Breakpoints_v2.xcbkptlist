@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackroomSessions_TeamB/View/RegistrationView.swift"
-            timestampString = "597734239.258744"
+            timestampString = "597815838.938653"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "184"
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackroomSessions_TeamB/Controller/RegistrationController.swift"
-            timestampString = "597742835.115137"
+            timestampString = "597817000.5360579"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "configureRegistrationUI()"
             landmarkType = "7">
             <Locations>
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackroomSessions_TeamB/Controller/ArtistsController.swift"
-            timestampString = "597742835.11522"
+            timestampString = "597817000.536202"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackroomSessions_TeamB/Controller/ContainerController.swift"
-            timestampString = "597742835.115633"
+            timestampString = "597817000.536291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "125"
@@ -106,12 +106,186 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackroomSessions_TeamB/Controller/RegistrationController.swift"
-            timestampString = "597742835.1157089"
+            timestampString = "597817000.53637"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "registerPressed()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackroomSessions_TeamB/View/ProfileView.swift"
+            timestampString = "597817000.536487"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "ProfileView"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BackroomSessions_TeamB.ProfileView.artist.getter : Swift.ImplicitlyUnwrappedOptional&lt;BackroomSessions_TeamB.Artist&gt;"
+                  moduleName = "BackroomSessions_TeamB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/genesisbarrios/Desktop/Fall%202019/COP%204655%20-%20Mobile%20App%20Dev/final%20project/BackroomSessions_Team_B/BackroomSessions_TeamB/View/ProfileView.swift"
+                  timestampString = "597806720.1314991"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "109">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BackroomSessions_TeamB.ProfileView.artist.setter : Swift.ImplicitlyUnwrappedOptional&lt;BackroomSessions_TeamB.Artist&gt;"
+                  moduleName = "BackroomSessions_TeamB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/genesisbarrios/Desktop/Fall%202019/COP%204655%20-%20Mobile%20App%20Dev/final%20project/BackroomSessions_Team_B/BackroomSessions_TeamB/View/ProfileView.swift"
+                  timestampString = "597806720.135697"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BackroomSessions_TeamB.ProfileView.init(frame: __C.CGRect) -&gt; BackroomSessions_TeamB.ProfileView"
+                  moduleName = "BackroomSessions_TeamB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/genesisbarrios/Desktop/Fall%202019/COP%204655%20-%20Mobile%20App%20Dev/final%20project/BackroomSessions_Team_B/BackroomSessions_TeamB/View/ProfileView.swift"
+                  timestampString = "597806720.139928"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BackroomSessions_TeamB.ProfileView.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;BackroomSessions_TeamB.ProfileView&gt;"
+                  moduleName = "BackroomSessions_TeamB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/genesisbarrios/Desktop/Fall%202019/COP%204655%20-%20Mobile%20App%20Dev/final%20project/BackroomSessions_Team_B/BackroomSessions_TeamB/View/ProfileView.swift"
+                  timestampString = "597806720.144156"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "49">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackroomSessions_TeamB/View/ProfileView.swift"
+            timestampString = "597817000.537084"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "setup()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackroomSessions_TeamB/Controller/RegistrationController.swift"
+            timestampString = "597817000.537674"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "registerPressed()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackroomSessions_TeamB/Controller/RegistrationController.swift"
+            timestampString = "597817000.5378211"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackroomSessions_TeamB/Controller/RegistrationController.swift"
+            timestampString = "597817000.537919"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackroomSessions_TeamB/Controller/RegistrationController.swift"
+            timestampString = "597817000.538065"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "setupProfileView(artist:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackroomSessions_TeamB/Controller/RegistrationController.swift"
+            timestampString = "597817000.538183"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "setupProfileView(artist:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
