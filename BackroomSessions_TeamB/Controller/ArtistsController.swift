@@ -17,8 +17,6 @@ class ArtistsController: UIViewController, UICollectionViewDelegate, UICollectio
     var artistsCollectionView: UICollectionView!
     var delegate: HomeControllerDelegate?       // Links controller with actions in the menu
     
-    //let allArtists = ArtistDB.sharedInstance    // Enables use of the ArtistDB model
-    
     let persistenceManager: PersistenceManager!
     
     init(persistenceManager: PersistenceManager){
@@ -35,7 +33,7 @@ class ArtistsController: UIViewController, UICollectionViewDelegate, UICollectio
     // Init
     override func loadView() {
         super.loadView()
-        allArtists = persistenceManager.fetch(Artist.self)
+        allArtists = persistenceManager.fetch()
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -53,8 +51,28 @@ class ArtistsController: UIViewController, UICollectionViewDelegate, UICollectio
         super.viewDidLoad()
         configureCollectionView()
         configureArtistsUI()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let modelArtists = ArtistDB.sharedInstance
+        let context = persistenceManager.context
         
-        persistenceManager?.save()
+        if modelArtists.numOfArtists() != allArtists.count {
+            for artist in modelArtists.getAllArtists() {
+                let newArtist = Artist(context: context)
+                
+                // If appropriate, configure the new managed object.
+                newArtist.name = artist.name
+                newArtist.email = artist.email
+                newArtist.phoneNumber = artist.phoneNumber
+                newArtist.profilePicture = UIImageJPEGRepresentation(artist.picture!, 1)! as NSData
+                newArtist.youtubeLink = artist.youtubeLink
+                newArtist.soundcloudLink = artist.soundcloudLink
+                newArtist.websiteLink = artist.websiteLink
+            }
+        }
+        
+        persistenceManager.save()
     }
     
     //This method configure the way the UI for the EventsViewController will look like.
@@ -141,7 +159,12 @@ class ArtistsController: UIViewController, UICollectionViewDelegate, UICollectio
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailViewController = ArtistDetailController()
         detailViewController.viewArtist = allArtists[indexPath.row]
-        present(detailViewController, animated: true, completion: nil)
+        detailViewController.delegate = self.delegate
+        DispatchQueue.main.async {
+            detailViewController.rootController = self
+        }
+        
+        self.navigationController!.pushViewController(detailViewController, animated: true)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -173,6 +196,4 @@ class ArtistsController: UIViewController, UICollectionViewDelegate, UICollectio
         
         return cell
     }
-    
 }
-

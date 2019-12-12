@@ -47,15 +47,14 @@ final class PersistenceManager{
         }
     }
     
-    func fetch<T: NSManagedObject>(_ objectType: T.Type) -> [T]{
-        let entityName = String(describing: objectType)
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+    func fetch<Artist: NSManagedObject>() -> [Artist]{
+        let fetchRequest = NSFetchRequest<Artist>(entityName: "Artist")
         do {
-            let fetchedObjects = try context.fetch(fetchRequest) as? [T]
-            return fetchedObjects ?? [T]()
+            let fetchedObjects = try context.fetch(fetchRequest)
+            return fetchedObjects 
         }catch{
             print(error)
-            return [T]()
+            return [Artist]()
         }
     }
 }

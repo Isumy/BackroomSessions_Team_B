@@ -138,4 +138,3 @@ class RegistrationController: UIViewController, UIImagePickerControllerDelegate,
         dismiss(animated: true, completion: nil)
     }
 }
-
