@@ -83,6 +83,7 @@ class RegistrationController: UIViewController, UIImagePickerControllerDelegate,
             profileView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             ])
         self.profileView.artist = artist
+        self.profileView.setup()
     }
     
     //create core data artist 

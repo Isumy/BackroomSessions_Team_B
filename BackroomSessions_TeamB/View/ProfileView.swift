@@ -21,10 +21,14 @@ class ProfileView: UIView{
     }
     
     func setup(){
-        let nameLabel = UILabel(frame: CGRect(x: 30, y: 30, width: 200, height: 21))
-        nameLabel.textColor = .white
-        nameLabel.text = artist.name
-        addSubview(nameLabel)
+        profileImageView.image = UIImage(data: artist.profilePicture as! Data)
+        addSubview(profileImageView)
     }
+    
+    let profileImageView: UIImageView = {
+        let iv = UIImageView(frame: CGRect(x: UIScreen.main.bounds.width / 2 - 100, y: 30.0, width:200, height: 200.0))
+        iv.contentMode = .scaleAspectFit
+        return iv
+    }()
     
 }
