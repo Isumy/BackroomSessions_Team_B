@@ -46,8 +46,8 @@ class RegistrationController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     func registered() -> [Artist]{
-        let allArtists = persistenceManager.fetch()
-        for i in 0...allArtists.count{
+        let allArtists = persistenceManager.fetch() as [Artist]
+        for i in 0...allArtists.count {
             if(allArtists[i].registered == true){
                 return [allArtists[i]]
             }
