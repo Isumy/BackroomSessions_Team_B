@@ -16,6 +16,8 @@
 		AB55890E239EE9AE004EB2DE /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55890D239EE9AE004EB2DE /* RegistrationView.swift */; };
 		BF184521239F568000C97AC9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF184520239F568000C97AC9 /* Extensions.swift */; };
 		BF184525239FFC8A00C97AC9 /* EventDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF184524239FFC8A00C97AC9 /* EventDetailsController.swift */; };
+		BF18452723A2838800C97AC9 /* EventImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF18452623A2838800C97AC9 /* EventImagesCell.swift */; };
+		BF18452923A284DE00C97AC9 /* EventAlbumImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF18452823A284DE00C97AC9 /* EventAlbumImagesCell.swift */; };
 		BF2F15E02395A74600AF39C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2F15DF2395A74600AF39C7 /* AppDelegate.swift */; };
 		BF2F15E52395A74600AF39C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2F15E32395A74600AF39C7 /* Main.storyboard */; };
 		BF2F15E82395A74600AF39C7 /* BackroomSessions_TeamB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF2F15E62395A74600AF39C7 /* BackroomSessions_TeamB.xcdatamodeld */; };
@@ -41,6 +43,8 @@
 		AB55890D239EE9AE004EB2DE /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		BF184520239F568000C97AC9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BF184524239FFC8A00C97AC9 /* EventDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsController.swift; sourceTree = "<group>"; };
+		BF18452623A2838800C97AC9 /* EventImagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventImagesCell.swift; sourceTree = "<group>"; };
+		BF18452823A284DE00C97AC9 /* EventAlbumImagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAlbumImagesCell.swift; sourceTree = "<group>"; };
 		BF2F15DC2395A74600AF39C7 /* BackroomSessions_TeamB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackroomSessions_TeamB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2F15DF2395A74600AF39C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF2F15E42395A74600AF39C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 			children = (
 				BF9A0E602398CAA8001CA797 /* MenuOption.swift */,
 				2E288ABC2399559F00302D2C /* ArtistDB.swift */,
+				BF18452623A2838800C97AC9 /* EventImagesCell.swift */,
+				BF18452823A284DE00C97AC9 /* EventAlbumImagesCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -220,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF2F15E82395A74600AF39C7 /* BackroomSessions_TeamB.xcdatamodeld in Sources */,
+				BF18452723A2838800C97AC9 /* EventImagesCell.swift in Sources */,
 				BF184521239F568000C97AC9 /* Extensions.swift in Sources */,
 				BF2F15E02395A74600AF39C7 /* AppDelegate.swift in Sources */,
 				BF184525239FFC8A00C97AC9 /* EventDetailsController.swift in Sources */,
@@ -228,6 +235,7 @@
 				BF9A0E612398CAA8001CA797 /* MenuOption.swift in Sources */,
 				AB55890E239EE9AE004EB2DE /* RegistrationView.swift in Sources */,
 				BF9A0E5F2398C257001CA797 /* MenuOptionViewCell.swift in Sources */,
+				BF18452923A284DE00C97AC9 /* EventAlbumImagesCell.swift in Sources */,
 				AB55890C239EE471004EB2DE /* RegistrationController.swift in Sources */,
 				BF46DC53239ED3CA00145F23 /* SettingsController.swift in Sources */,
 				BF9A0E59239809AE001CA797 /* EventsController.swift in Sources */,

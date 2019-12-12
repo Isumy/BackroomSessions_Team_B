@@ -13,6 +13,7 @@ class EventsController: UIViewController, UICollectionViewDelegate, UICollection
     
     //Properties
     
+    let imagesArray = ["Nov19", "Nov20", "Nov23", "Past1", "Past2", "Past3", "Past4"]
     let collectionView: UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()
@@ -59,9 +60,9 @@ class EventsController: UIViewController, UICollectionViewDelegate, UICollection
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        //Register the cells
-        collectionView.register(ImagesCell.self, forCellWithReuseIdentifier: imagesCellId)
-        collectionView.register(AlbumsCell.self, forCellWithReuseIdentifier: albumsCellId)
+        //Register the cell classes
+        collectionView.register(EventImagesCell.self, forCellWithReuseIdentifier: imagesCellId)
+        collectionView.register(EventAlbumImagesCell.self, forCellWithReuseIdentifier: albumsCellId)
         
         //  let background = UIColor(patternImage: UIImage(named: "background") ?? UIImage())
         //view.backgroundColor = background
@@ -108,13 +109,13 @@ class EventsController: UIViewController, UICollectionViewDelegate, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 1{ 
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: albumsCellId, for: indexPath) as! AlbumsCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: albumsCellId, for: indexPath) as! EventAlbumImagesCell
             
             
             
             return cell
         }
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: imagesCellId  , for: indexPath) as! ImagesCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: imagesCellId  , for: indexPath) as! EventImagesCell
         
         return cell
     }
@@ -133,7 +134,7 @@ class EventsController: UIViewController, UICollectionViewDelegate, UICollection
          return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
     }
 }
-
+/*
 //Classes for the cells
 
 class ImagesCell: UICollectionViewCell , UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -204,23 +205,44 @@ class ImagesCell: UICollectionViewCell , UICollectionViewDelegate, UICollectionV
     
     //Creating inner class for icon cell
     private class IconCell: UICollectionViewCell{
+        
+        let imageView: UIImageView = {
+            let iv = UIImageView()
+            iv.contentMode = .scaleAspectFill
+            iv.clipsToBounds = true
+            iv.layer.cornerRadius = 15
+            
+            return iv
+        }()
+        
+        //Ini
         override init(frame: CGRect) {
             super.init(frame: frame)
             
-            backgroundColor = .blue
+           
             
         }
         
         required init?(coder aDecoder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
+        //funtions
+        
+        func setup(){
+            
+             backgroundColor = .blue
+            addSubview(imageView)
+            imageView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
+        }
+        
+        
     }// End of Icon class
     
 }//end of Imagecell Class
 
+*/
 
-
-
+/*
 class AlbumsCell: UICollectionViewCell {
     
     override init(frame: CGRect){
@@ -232,3 +254,4 @@ class AlbumsCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }//End of AlbumCell class
+*/
