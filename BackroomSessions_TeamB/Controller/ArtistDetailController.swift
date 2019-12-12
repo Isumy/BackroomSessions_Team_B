@@ -73,36 +73,42 @@ class ArtistDetailController: UIViewController, UIImagePickerControllerDelegate,
         let artistNameLabel: UILabel = {
             let label = UILabel(frame: CGRect(x: 0, y: 275.0, width:UIScreen.main.bounds.width, height: 60.0))
             label.text = "Name: \(artist.name ?? "")"
+            
             return label
         }()
         
         let artistEmailLabel: UILabel = {
             let label = UILabel(frame: CGRect(x: 0, y: 340.0, width:UIScreen.main.bounds.width, height: 60.0))
             label.text = "Email: \(artist.email ?? "")"
+            
             return label
         }()
         
         let artistNumberLabel: UILabel = {
             let label = UILabel(frame: CGRect(x: 0, y: 405.0, width:UIScreen.main.bounds.width, height: 60.0))
             label.text = "Number: \(artist.phoneNumber ?? "")"
+            
             return label
         }()
         
         let artistYoutubeLabel: UILabel = {
             let label = UILabel(frame: CGRect(x: 0, y: 470.0, width:UIScreen.main.bounds.width, height: 60.0))
             label.text = "Youtube Link: \(artist.youtubeLink?.relativeString ?? "")"
+            
             return label
         }()
         
         let artistSoundcloudLabel: UILabel = {
             let label = UILabel(frame: CGRect(x: 0, y: 535.0, width:UIScreen.main.bounds.width, height: 60.0))
             label.text = "Soundcloud Link: \(artist.soundcloudLink?.relativeString ?? "")"
+            
             return label
         }()
         
         let artistWebsiteLabel: UILabel = {
             let label = UILabel(frame: CGRect(x: 0, y: 600.0, width:UIScreen.main.bounds.width, height: 60.0))
             label.text = "Website: \(artist.websiteLink?.relativeString ?? "")"
+            
             return label
         }()
         
