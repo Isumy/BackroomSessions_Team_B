@@ -11,6 +11,8 @@ import UIKit
 class RegistrationController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     var registrationView: RegistrationView!
+    var profileView: ProfileView!
+    var artist: [Artist]!
     
     //delegate to link menucontroller with actions in the menu
     var delegate: HomeControllerDelegate?
@@ -33,9 +35,24 @@ class RegistrationController: UIViewController, UIImagePickerControllerDelegate,
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        setupView()
+        artist = registered()
+        if(artist.count > 0){
+            setupProfileView(artist: artist[0])
+        }else{
+            setupView()
+        }
         configureRegistrationUI()
         persistenceManager?.save()
+    }
+    
+    func registered() -> [Artist]{
+        let allArtists = persistenceManager.fetch(Artist.self)
+        for i in 0...allArtists.count{
+            if(allArtists[i].registered == true){
+                return [allArtists[i]]
+            }
+        }
+        return [Artist()]
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +73,18 @@ class RegistrationController: UIViewController, UIImagePickerControllerDelegate,
             ])
     }
     
+    func setupProfileView(artist: Artist){
+        self.profileView = ProfileView(frame: self.view.frame)
+        self.view.addSubview(profileView)
+        NSLayoutConstraint.activate([
+            profileView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            profileView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            profileView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            profileView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            ])
+        self.profileView.artist = artist
+    }
+    
     //create core data artist 
     func registerPressed(){
         print("register pressed")
@@ -68,7 +97,7 @@ class RegistrationController: UIViewController, UIImagePickerControllerDelegate,
         artist.youtubeLink = NSURL(string: registrationView.youtubeLinkTextField.text!)! as URL
         artist.soundcloudLink = NSURL(string: registrationView.soundcloudLinkTextField.text!)! as URL
         artist.websiteLink = NSURL(string: registrationView.websiteLinkTextField.text!)! as URL
-   
+        artist.registered = true
         persistenceManager.save()
     }
     
@@ -83,7 +112,11 @@ class RegistrationController: UIViewController, UIImagePickerControllerDelegate,
         
         navigationController?.navigationBar.barStyle = .black
         
-        navigationItem.title = "Registration"
+        if(artist.count > 0){
+             navigationItem.title = "Your Artist Information"
+        }else{
+             navigationItem.title = "Registration"
+        }
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "icons8-back-white").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleDismissVC))
     }
     
@@ -137,5 +170,6 @@ class RegistrationController: UIViewController, UIImagePickerControllerDelegate,
         }
         dismiss(animated: true, completion: nil)
     }
+
 }
 
