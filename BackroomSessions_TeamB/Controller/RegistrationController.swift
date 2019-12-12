@@ -75,6 +75,7 @@ class RegistrationController: UIViewController, UIImagePickerControllerDelegate,
     
     func setupProfileView(artist: Artist){
         self.profileView = ProfileView(frame: self.view.frame)
+        self.profileView.artist = artist
         self.view.addSubview(profileView)
         NSLayoutConstraint.activate([
             profileView.topAnchor.constraint(equalTo: self.view.topAnchor),
@@ -82,7 +83,6 @@ class RegistrationController: UIViewController, UIImagePickerControllerDelegate,
             profileView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             profileView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             ])
-        self.profileView.artist = artist
         self.profileView.setup()
     }
     
