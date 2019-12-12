@@ -49,7 +49,7 @@ class EventImagesCell: UICollectionViewCell , UICollectionViewDelegate, UICollec
     //funtions
     
     func setup(){
-        backgroundColor = .red
+        //backgroundColor = .red
         addSubview(collectionView)
         
         collectionView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0 , paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
@@ -60,6 +60,7 @@ class EventImagesCell: UICollectionViewCell , UICollectionViewDelegate, UICollec
         
         //registering IconCell
         collectionView.register(IconCell.self, forCellWithReuseIdentifier: IconCellIdentifier)
+        collectionView.showsHorizontalScrollIndicator = false
     }
     //Implementing required methods in order to conform to the delegates
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

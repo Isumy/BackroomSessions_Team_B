@@ -13,12 +13,13 @@ class EventsController: UIViewController, UICollectionViewDelegate, UICollection
     
     //Properties
     
-    let imagesArray = ["past1", "past2", "past3", "past4"]
+    let pastEventImagesArray = ["past1", "past2", "past3", "past4"]
+    let upcomingEventImagesArray = ["Nov19", "Nov20", "Nov23"]
     
     let collectionView: UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 16
+        //layout.minimumLineSpacing = 16
         layout.scrollDirection = .vertical
         
         let eventCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -29,7 +30,7 @@ class EventsController: UIViewController, UICollectionViewDelegate, UICollection
     
     let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill//.scaleAspectFill
         imageView.image = UIImage(named: "background")
         
         return imageView
@@ -103,7 +104,7 @@ class EventsController: UIViewController, UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 1
         {
-            return 9
+            return upcomingEventImagesArray.count
         }
         return 1
     }
@@ -111,28 +112,29 @@ class EventsController: UIViewController, UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 1{ 
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: albumsCellId, for: indexPath) as! EventAlbumImagesCell
-            
+            cell.album = upcomingEventImagesArray[indexPath.item]
             
             
             return cell
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: imagesCellId  , for: indexPath) as! EventImagesCell
-        cell.images = imagesArray
+        //passing array of past images two the cell
+        cell.images = pastEventImagesArray
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if indexPath.section == 1{
-            return CGSize(width: (view.frame.width/3) - 16, height: 100)
+            return CGSize(width: (view.frame.width) - 50, height: 200)
         }
-        return CGSize(width: view.frame.width, height: 300)
+        return CGSize(width: view.frame.width, height: 150)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if section == 1 {
-            return UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 8)
+            return UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 0)
         }
-         return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+         return UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 0)
     }
 }
 /*
