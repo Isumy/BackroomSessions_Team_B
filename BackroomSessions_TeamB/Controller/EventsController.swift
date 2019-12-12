@@ -13,7 +13,8 @@ class EventsController: UIViewController, UICollectionViewDelegate, UICollection
     
     //Properties
     
-    let imagesArray = ["Nov19", "Nov20", "Nov23", "Past1", "Past2", "Past3", "Past4"]
+    let imagesArray = ["past1", "past2", "past3", "past4"]
+    
     let collectionView: UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()
@@ -116,7 +117,7 @@ class EventsController: UIViewController, UICollectionViewDelegate, UICollection
             return cell
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: imagesCellId  , for: indexPath) as! EventImagesCell
-        
+        cell.images = imagesArray
         return cell
     }
     

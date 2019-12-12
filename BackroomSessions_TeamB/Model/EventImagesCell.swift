@@ -32,7 +32,7 @@ class EventImagesCell: UICollectionViewCell , UICollectionViewDelegate, UICollec
         return cv
     }()
     
-    let cellIdentifier = "cellIdentifier"
+    let IconCellIdentifier = "cellIdentifier"
     //Init
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -59,7 +59,7 @@ class EventImagesCell: UICollectionViewCell , UICollectionViewDelegate, UICollec
         
         
         //registering IconCell
-        collectionView.register(IconCell.self, forCellWithReuseIdentifier: cellIdentifier)
+        collectionView.register(IconCell.self, forCellWithReuseIdentifier: IconCellIdentifier)
     }
     //Implementing required methods in order to conform to the delegates
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -68,7 +68,7 @@ class EventImagesCell: UICollectionViewCell , UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! IconCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IconCellIdentifier, for: indexPath) as! IconCell
         
         //switch to core data
         if let imageName = images?[indexPath.item] {
@@ -90,7 +90,7 @@ class EventImagesCell: UICollectionViewCell , UICollectionViewDelegate, UICollec
     
     
     //Creating inner class for icon cell
-    private class IconCell: UICollectionViewCell{
+   private class IconCell: UICollectionViewCell{
         
         let imageView: UIImageView = {
             let iv = UIImageView()
@@ -105,7 +105,7 @@ class EventImagesCell: UICollectionViewCell , UICollectionViewDelegate, UICollec
         override init(frame: CGRect) {
             super.init(frame: frame)
             
-            
+            setup()
             
         }
         
@@ -115,7 +115,7 @@ class EventImagesCell: UICollectionViewCell , UICollectionViewDelegate, UICollec
         //funtions
         
         func setup(){
-            
+            //backgroundColor = .blue
             addSubview(imageView)
             imageView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
         }
