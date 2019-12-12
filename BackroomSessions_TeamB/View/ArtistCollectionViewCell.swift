@@ -32,7 +32,6 @@ class ArtistCollectionViewCell: UICollectionViewCell{
         self.contentView.backgroundColor = UIColor(red: 240/255, green: 96/255, blue: 47/255, alpha: 0.8)
         self.artistName.textAlignment = .center
         self.artistName.textColor = .white
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

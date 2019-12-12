@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 final class PersistenceManager{
     private init(){}
@@ -56,5 +57,24 @@ final class PersistenceManager{
             print(error)
             return [Artist]()
         }
+    }
+    
+    
+    // Allows for new Artists to be created in CoreData
+    func newArtist(name: String, email: String, picture: UIImage, phoneNumber: String,
+                   youtubeLink: URL?, soundcloudLink: URL?, websiteLink: URL?) {
+        let artist = NSEntityDescription.insertNewObject(forEntityName: "Artist", into: context) as! Artist
+        
+        artist.profilePicture = UIImageJPEGRepresentation(picture, 1)! as NSData
+        
+        artist.name = name
+        artist.email = email
+        artist.phoneNumber = phoneNumber
+        artist.youtubeLink = youtubeLink
+        artist.soundcloudLink = soundcloudLink
+        artist.websiteLink = websiteLink
+        artist.registered = true
+        
+        save()
     }
 }
