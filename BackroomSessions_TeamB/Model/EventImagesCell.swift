@@ -12,6 +12,15 @@ import UIKit
 class EventImagesCell: UICollectionViewCell , UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     //Properties
+    
+     //switch to core data
+    var images: [String]? {
+        
+        didSet{
+        collectionView.reloadData()
+        }
+    }
+    
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 30
@@ -61,6 +70,11 @@ class EventImagesCell: UICollectionViewCell , UICollectionViewDelegate, UICollec
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! IconCell
         
+        //switch to core data
+        if let imageName = images?[indexPath.item] {
+            cell.imageView.image = UIImage(named: imageName)
+        }
+        
         return cell
     }
     
@@ -102,7 +116,6 @@ class EventImagesCell: UICollectionViewCell , UICollectionViewDelegate, UICollec
         
         func setup(){
             
-            backgroundColor = .blue
             addSubview(imageView)
             imageView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
         }
