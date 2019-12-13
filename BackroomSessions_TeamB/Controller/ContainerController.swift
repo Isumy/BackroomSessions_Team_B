@@ -105,7 +105,7 @@ class ContainerController: UIViewController{
             //Go to Event controller
             print("Show Events Controller")
             //presenting Events controller
-            let controller = EventsController()
+            let controller = EventsController(persistenceManager: PersistenceManager.shared)
             present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
         case .Artist:
             //Go to Artist controller
@@ -116,7 +116,7 @@ class ContainerController: UIViewController{
         case .Favorites:
             //Go to Favorite controller
             print("Show Favorites Controller")
-            let controller = FavoriteController()
+            let controller = FavoriteController(persistenceManager: PersistenceManager.shared)
             present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
             
         case .Registration:

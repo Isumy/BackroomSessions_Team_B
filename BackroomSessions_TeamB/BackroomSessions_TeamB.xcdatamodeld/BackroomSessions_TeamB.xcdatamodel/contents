@@ -10,7 +10,16 @@
         <attribute name="websiteLink" optional="YES" attributeType="URI" syncable="YES"/>
         <attribute name="youtubeLink" optional="YES" attributeType="URI" syncable="YES"/>
     </entity>
+    <entity name="Events" representedClassName=".Events" syncable="YES">
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="imageEvent" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Artist" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="Events" positionX="-45" positionY="63" width="128" height="135"/>
     </elements>
 </model>

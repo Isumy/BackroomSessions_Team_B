@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackroomSessions_TeamB/Controller/RegistrationController.swift"
-            timestampString = "597830190.820946"
+            timestampString = "597958268.324932"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "configureRegistrationUI()"
             landmarkType = "7">
             <Locations>
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackroomSessions_TeamB/Controller/ArtistsController.swift"
-            timestampString = "597829876.702679"
+            timestampString = "597967085.711437"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackroomSessions_TeamB/Controller/ContainerController.swift"
-            timestampString = "597817000.536291"
+            timestampString = "597967085.711522"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "125"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackroomSessions_TeamB/Controller/RegistrationController.swift"
-            timestampString = "597830190.821107"
+            timestampString = "597958268.325534"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
@@ -216,7 +216,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackroomSessions_TeamB/Controller/RegistrationController.swift"
-            timestampString = "597830190.821391"
+            timestampString = "597958268.325904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
@@ -232,7 +232,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackroomSessions_TeamB/Controller/RegistrationController.swift"
-            timestampString = "597830190.821465"
+            timestampString = "597958268.326179"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -248,7 +248,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackroomSessions_TeamB/Controller/RegistrationController.swift"
-            timestampString = "597830190.8215359"
+            timestampString = "597958268.326473"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -264,7 +264,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackroomSessions_TeamB/Controller/RegistrationController.swift"
-            timestampString = "597830190.821607"
+            timestampString = "597958268.32673"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
@@ -296,7 +296,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackroomSessions_TeamB/Controller/ArtistDetailController.swift"
-            timestampString = "597830190.821781"
+            timestampString = "597965641.966634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -312,13 +312,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackroomSessions_TeamB/Controller/ArtistDetailController.swift"
-            timestampString = "597830190.822252"
+            timestampString = "597965641.966768"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
             endingLineNumber = "48"
-            landmarkName = "handleDismissVC()"
-            landmarkType = "7">
+            landmarkName = "ArtistDetailController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -328,13 +328,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackroomSessions_TeamB/Controller/ArtistDetailController.swift"
-            timestampString = "597830190.822575"
+            timestampString = "597965641.966869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
             endingLineNumber = "52"
-            landmarkName = "textStyle(_:)"
-            landmarkType = "7">
+            landmarkName = "ArtistDetailController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -344,7 +344,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackroomSessions_TeamB/Controller/ArtistDetailController.swift"
-            timestampString = "597830190.822881"
+            timestampString = "597965641.966936"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
@@ -360,7 +360,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackroomSessions_TeamB/Controller/ArtistDetailController.swift"
-            timestampString = "597830190.823198"
+            timestampString = "597965641.966996"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -376,7 +376,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackroomSessions_TeamB/Controller/ArtistDetailController.swift"
-            timestampString = "597830190.823488"
+            timestampString = "597965641.967055"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -456,7 +456,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackroomSessions_TeamB/Controller/RegistrationController.swift"
-            timestampString = "597830190.823909"
+            timestampString = "597958268.32717"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
@@ -527,6 +527,22 @@
                   offsetFromSymbolStart = "4">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BackroomSessions_TeamB/Controller/RegistrationController.swift"
+            timestampString = "597958268.327455"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "registered()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

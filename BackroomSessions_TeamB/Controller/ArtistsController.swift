@@ -34,7 +34,7 @@ class ArtistsController: UIViewController, UICollectionViewDataSource, UICollect
     // Init
     override func loadView() {
         super.loadView()
-        allArtists = persistenceManager.fetch()
+        allArtists = persistenceManager.fetch(Artist.self)
         filtered = allArtists
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
@@ -57,11 +57,11 @@ class ArtistsController: UIViewController, UICollectionViewDataSource, UICollect
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        filtered = persistenceManager.fetch()
+        filtered = persistenceManager.fetch(Artist.self)
     }
     
     //This method configure the way the UI for the EventsViewController will look like.
-    func configureArtistsUI(){
+     func configureArtistsUI(){
         
         //Embedding Navigatoion Controller to Events ViewController
         navigationController?.navigationBar.barTintColor = .darkGray
@@ -75,6 +75,7 @@ class ArtistsController: UIViewController, UICollectionViewDataSource, UICollect
         searchBarController.searchBar.placeholder = "Search Artists..."
         searchBarController.searchBar.showsCancelButton = true
         navigationItem.hidesSearchBarWhenScrolling = false
+        self.definesPresentationContext = true
         navigationItem.searchController = searchBarController
     }
     
@@ -92,13 +93,12 @@ class ArtistsController: UIViewController, UICollectionViewDataSource, UICollect
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        filtered = persistenceManager.fetch()
         searchBar.resignFirstResponder()
         artistsCollectionView.reloadData()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        filtered = persistenceManager.fetch()
+        filtered = persistenceManager.fetch(Artist.self)
         searchBar.resignFirstResponder()
         artistsCollectionView.reloadData()
     }
@@ -154,7 +154,7 @@ class ArtistsController: UIViewController, UICollectionViewDataSource, UICollect
         detailViewController.delegate = self.delegate
         detailViewController.rootController = self
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: {
-            self.filtered = self.persistenceManager.fetch()
+            self.filtered = self.persistenceManager.fetch(Artist.self)
             self.navigationController!.pushViewController(detailViewController, animated: true)
         })
     }

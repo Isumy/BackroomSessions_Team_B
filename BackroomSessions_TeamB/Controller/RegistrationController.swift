@@ -46,13 +46,13 @@ class RegistrationController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     func registered() -> [Artist]{
-        let allArtists = persistenceManager.fetch() as [Artist]
+        let allArtists = persistenceManager.fetch(Artist.self) as [Artist]
         for i in 0..<allArtists.count {
             if(allArtists[i].registered == true){
                 return [allArtists[i]]
             }
         }
-        return [Artist()]
+        return []
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,6 +100,11 @@ class RegistrationController: UIViewController, UIImagePickerControllerDelegate,
         artist.websiteLink = NSURL(string: registrationView.websiteLinkTextField.text!)! as URL
         artist.registered = true
         persistenceManager.save()
+        
+        var alert = UIAlertController(title: "Success",
+                                      message: "You have been registered!",
+                                      preferredStyle: .alert)
+        self.present(alert, animated: true, completion:{self.handleDismissVC()})
     }
     
     //Functions
