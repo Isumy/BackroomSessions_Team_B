@@ -61,7 +61,7 @@ class ArtistsController: UIViewController, UICollectionViewDataSource, UICollect
     }
     
     //This method configure the way the UI for the EventsViewController will look like.
-    func configureArtistsUI(){
+     func configureArtistsUI(){
         
         //Embedding Navigatoion Controller to Events ViewController
         navigationController?.navigationBar.barTintColor = .darkGray
@@ -75,6 +75,7 @@ class ArtistsController: UIViewController, UICollectionViewDataSource, UICollect
         searchBarController.searchBar.placeholder = "Search Artists..."
         searchBarController.searchBar.showsCancelButton = true
         navigationItem.hidesSearchBarWhenScrolling = false
+        self.definesPresentationContext = true
         navigationItem.searchController = searchBarController
     }
     
@@ -92,7 +93,6 @@ class ArtistsController: UIViewController, UICollectionViewDataSource, UICollect
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        filtered = persistenceManager.fetch(Artist.self)
         searchBar.resignFirstResponder()
         artistsCollectionView.reloadData()
     }
