@@ -12,6 +12,8 @@ import UIKit
 class EventAlbumImagesCell: UICollectionViewCell {
     
     //Properties
+    
+    
     var album: String? {
         
         didSet{
@@ -29,6 +31,16 @@ class EventAlbumImagesCell: UICollectionViewCell {
         return iv
     }()
     
+    let albumEventLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Title"
+        label.textColor = UIColor.white
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.textAlignment = .center
+        
+        return label
+    }()
+    
     //Initializer
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -44,8 +56,12 @@ class EventAlbumImagesCell: UICollectionViewCell {
     //Function
     func setup(){
         //backgroundColor = .blue
+        
         addSubview(imageView)
         imageView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
+        self.addSubview(albumEventLabel)
+        albumEventLabel.setAnchor(top: imageView.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft:0, paddingBottom: 0, paddingRight: 0)
+        
     }
     
 }//End of AlbumCell class
