@@ -116,7 +116,7 @@ class ContainerController: UIViewController{
         case .Favorites:
             //Go to Favorite controller
             print("Show Favorites Controller")
-            let controller = FavoriteController()
+            let controller = FavoriteController(persistenceManager: PersistenceManager.shared)
             present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
             
         case .Registration:

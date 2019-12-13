@@ -18,6 +18,8 @@
 		AB55890C239EE471004EB2DE /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55890B239EE471004EB2DE /* RegistrationController.swift */; };
 		AB55890E239EE9AE004EB2DE /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55890D239EE9AE004EB2DE /* RegistrationView.swift */; };
 		ABF1AA4123A0A506007D5A68 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF1AA4023A0A506007D5A68 /* PersistenceManager.swift */; };
+		ABF3FE6523A41A6700D3F068 /* Events+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF3FE6323A41A6700D3F068 /* Events+CoreDataClass.swift */; };
+		ABF3FE6623A41A6700D3F068 /* Events+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF3FE6423A41A6700D3F068 /* Events+CoreDataProperties.swift */; };
 		BF2F15E02395A74600AF39C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2F15DF2395A74600AF39C7 /* AppDelegate.swift */; };
 		BF2F15E52395A74600AF39C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2F15E32395A74600AF39C7 /* Main.storyboard */; };
 		BF2F15E82395A74600AF39C7 /* BackroomSessions_TeamB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF2F15E62395A74600AF39C7 /* BackroomSessions_TeamB.xcdatamodeld */; };
@@ -48,6 +50,8 @@
 		AB55890B239EE471004EB2DE /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		AB55890D239EE9AE004EB2DE /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		ABF1AA4023A0A506007D5A68 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		ABF3FE6323A41A6700D3F068 /* Events+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Events+CoreDataClass.swift"; sourceTree = "<group>"; };
+		ABF3FE6423A41A6700D3F068 /* Events+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Events+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BF2F15DC2395A74600AF39C7 /* BackroomSessions_TeamB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackroomSessions_TeamB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2F15DF2395A74600AF39C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF2F15E42395A74600AF39C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 		BF2F15DE2395A74600AF39C7 /* BackroomSessions_TeamB */ = {
 			isa = PBXGroup;
 			children = (
+				ABF3FE6323A41A6700D3F068 /* Events+CoreDataClass.swift */,
+				ABF3FE6423A41A6700D3F068 /* Events+CoreDataProperties.swift */,
 				AB116C1D23A0D5C40014566D /* Artist+CoreDataClass.swift */,
 				AB116C1E23A0D5C40014566D /* Artist+CoreDataProperties.swift */,
 				BF2F15DF2395A74600AF39C7 /* AppDelegate.swift */,
@@ -240,6 +246,7 @@
 				BF2F15E02395A74600AF39C7 /* AppDelegate.swift in Sources */,
 				BF9A0E532397F98F001CA797 /* ContainerController.swift in Sources */,
 				BF9A0E572397F9B7001CA797 /* MenuController.swift in Sources */,
+				ABF3FE6523A41A6700D3F068 /* Events+CoreDataClass.swift in Sources */,
 				BF9A0E612398CAA8001CA797 /* MenuOption.swift in Sources */,
 				AB55890E239EE9AE004EB2DE /* RegistrationView.swift in Sources */,
 				BF9A0E5F2398C257001CA797 /* MenuOptionViewCell.swift in Sources */,
@@ -253,6 +260,7 @@
 				2E288AB523993E3100302D2C /* ArtistsController.swift in Sources */,
 				2E288ABD2399559F00302D2C /* ArtistDB.swift in Sources */,
 				BF9A0E5B2398B507001CA797 /* Protocols.swift in Sources */,
+				ABF3FE6623A41A6700D3F068 /* Events+CoreDataProperties.swift in Sources */,
 				BFF8DBAF23A34D3600EFD04B /* EventImagesCell.swift in Sources */,
 				2E288AB723993E7A00302D2C /* FavoriteController.swift in Sources */,
 				AB116C2223A1C7FC0014566D /* ProfileView.swift in Sources */,
