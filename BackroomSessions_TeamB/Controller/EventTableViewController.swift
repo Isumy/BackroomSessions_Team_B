@@ -13,6 +13,10 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
     
 
     //Properties
+    /////*****Only for testing
+  
+    
+    //********
     
     var eventsTableView = UITableView()
      var rootController: UIViewController?
@@ -26,12 +30,24 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         return imageView
     }()
     
+    /////*****Only for testing, delete after core data
+    var eventArray = [EventModal]()
+    
+    //********
     //Initialize
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
         //view.backgroundColor = .red
+        
+        /////*****Only for testing, needs to be deleted after implementing core data
+        
+        eventArray.append(EventModal(eventImage: #imageLiteral(resourceName: "nov20"), eventTitle: "Tampa Event", eventCity: "Tampa"))
+        eventArray.append(EventModal(eventImage: #imageLiteral(resourceName: "Nov23"), eventTitle: "New York Event", eventCity: "New York"))
+        eventArray.append(EventModal(eventImage: #imageLiteral(resourceName: "nov20"), eventTitle: "MiamiEvent", eventCity: "Miami"))
+        
+        //********
     }
     //functions
     
@@ -55,18 +71,36 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
     
     //conforming to table view protocols
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return eventArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = eventsTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = "\(indexPath.row)"
+        guard let cell = eventsTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? EventsTableViewCell else {fatalError("Unable to create cell") }
+        cell.eventImage.image = eventArray[indexPath.row].eventImage
+        cell.titleLabel.text = eventArray[indexPath.row].eventTitle
+        cell.cityLabel.text = eventArray[indexPath.row].eventCity
+        
+        //cell.textLabel?.text = "\(indexPath.row)"
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 118
+    }
+}
+
+//class created to test passing data to cellview, I need to change it to core data
+class EventModal{
+    var eventImage: UIImage?
+    var eventTitle: String?
+    var eventCity: String?
+    
+    init(eventImage: UIImage, eventTitle: String, eventCity: String){
+        
+        self.eventImage = eventImage
+        self.eventTitle = eventTitle
+        self.eventCity = eventCity
     }
 }

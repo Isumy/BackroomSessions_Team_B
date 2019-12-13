@@ -48,6 +48,8 @@ class EventsController: UIViewController, UICollectionViewDelegate, UICollection
         
         //Calling this method to makle changes to the UI
         configureEventsUI()
+        
+        
     }
     
     
