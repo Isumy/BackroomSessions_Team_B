@@ -34,6 +34,7 @@
 		BFF8DBAF23A34D3600EFD04B /* EventImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8DBAE23A34D3600EFD04B /* EventImagesCell.swift */; };
 		BFF8DBB123A34D8300EFD04B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8DBB023A34D8300EFD04B /* Extensions.swift */; };
 		BFF8DBB323A34DFC00EFD04B /* EventAlbumImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8DBB223A34DFC00EFD04B /* EventAlbumImagesCell.swift */; };
+		BFF8DBB523A362C400EFD04B /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8DBB423A362C400EFD04B /* EventTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		BFF8DBAE23A34D3600EFD04B /* EventImagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventImagesCell.swift; sourceTree = "<group>"; };
 		BFF8DBB023A34D8300EFD04B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BFF8DBB223A34DFC00EFD04B /* EventAlbumImagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAlbumImagesCell.swift; sourceTree = "<group>"; };
+		BFF8DBB423A362C400EFD04B /* EventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				2E288AB623993E7A00302D2C /* FavoriteController.swift */,
 				BF46DC52239ED3CA00145F23 /* SettingsController.swift */,
 				AB55890B239EE471004EB2DE /* RegistrationController.swift */,
+				BFF8DBB423A362C400EFD04B /* EventTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				2E288AB523993E3100302D2C /* ArtistsController.swift in Sources */,
 				2E288ABD2399559F00302D2C /* ArtistDB.swift in Sources */,
 				BF9A0E5B2398B507001CA797 /* Protocols.swift in Sources */,
+				BFF8DBB523A362C400EFD04B /* EventTableViewController.swift in Sources */,
 				BFF8DBAF23A34D3600EFD04B /* EventImagesCell.swift in Sources */,
 				2E288AB723993E7A00302D2C /* FavoriteController.swift in Sources */,
 				AB116C2223A1C7FC0014566D /* ProfileView.swift in Sources */,
