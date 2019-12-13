@@ -11,7 +11,7 @@ import UIKit
 
 private let reuseIdentifier = "ArtistCell"
 
-class ArtistsController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class ArtistsController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
     // Properties
     var artistsCollectionView: UICollectionView!
@@ -29,11 +29,13 @@ class ArtistsController: UIViewController, UICollectionViewDelegate, UICollectio
     }
     
     var allArtists: [Artist] = []
+    var filtered: [Artist] = []
     
     // Init
     override func loadView() {
         super.loadView()
         allArtists = persistenceManager.fetch()
+        filtered = allArtists
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -54,20 +56,26 @@ class ArtistsController: UIViewController, UICollectionViewDelegate, UICollectio
         configureArtistsUI()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        filtered = persistenceManager.fetch()
+    }
+    
     //This method configure the way the UI for the EventsViewController will look like.
     func configureArtistsUI(){
         
-//        let background = UIColor(patternImage: UIImage(named: "background") ?? UIImage())
-//        view.backgroundColor = background
-        
         //Embedding Navigatoion Controller to Events ViewController
         navigationController?.navigationBar.barTintColor = .darkGray
-        
         navigationController?.navigationBar.barStyle = .black
         
         navigationItem.title = "Artists"
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "icons8-back-white").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleDismissVC))
         
+        let searchBarController: UISearchController = UISearchController(searchResultsController: nil)
+        searchBarController.searchBar.delegate = self
+        searchBarController.searchBar.placeholder = "Search Artists..."
+        searchBarController.searchBar.showsCancelButton = true
+        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.searchController = searchBarController
     }
     
     //Selector function to dismiss the ViewController
@@ -75,20 +83,25 @@ class ArtistsController: UIViewController, UICollectionViewDelegate, UICollectio
         dismiss(animated: true, completion: nil)
     }
     
-   /* override func viewDidAppear(_ animated: Bool) {
-        let footer = UIImageView(image: UIImage(named: "footer-logo"))
-        footer.translatesAutoresizingMaskIntoConstraints = false
-     
-        view.insertSubview(footer, aboveSubview: artistsCollectionView)
-        artistsCollectionView.insertSubview(footer, at: 0)
-     
-//        footer.topAnchor.constraint(equalTo: self.artistsCollectionView.bottomAnchor).isActive = true
-//        footer.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        footer.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        footer.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-        footer.heightAnchor.constraint(equalToConstant: 220).isActive = true
-        footer.widthAnchor.constraint(equalToConstant: 219).isActive = true
-    } */
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filtered = searchText.isEmpty ? allArtists : allArtists.filter { (artist: Artist) -> Bool in
+            return artist.name?.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        }
+
+        artistsCollectionView.reloadData()
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        filtered = persistenceManager.fetch()
+        searchBar.resignFirstResponder()
+        artistsCollectionView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        filtered = persistenceManager.fetch()
+        searchBar.resignFirstResponder()
+        artistsCollectionView.reloadData()
+    }
     
     // Functions
     func configureCollectionView(){
@@ -137,12 +150,13 @@ class ArtistsController: UIViewController, UICollectionViewDelegate, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailViewController = ArtistDetailController()
-        detailViewController.viewArtist = allArtists[indexPath.row]
+        detailViewController.viewArtist = filtered[indexPath.row]
         detailViewController.delegate = self.delegate
         detailViewController.rootController = self
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: {
+            self.filtered = self.persistenceManager.fetch()
             self.navigationController!.pushViewController(detailViewController, animated: true)
-        }
+        })
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -151,7 +165,7 @@ class ArtistsController: UIViewController, UICollectionViewDelegate, UICollectio
     
     // Displays the collectionView with the number of artists
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return allArtists.count
+        return filtered.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -160,7 +174,7 @@ class ArtistsController: UIViewController, UICollectionViewDelegate, UICollectio
         
         /* Set the text on the cell with the name of the artist that
          is at the nth index of the artists list, where n = row */
-        let artist = allArtists[indexPath.row]
+        let artist = filtered[indexPath.row]
         
         // Display the Artist name in each cell, going through every Artist
         cell.artistName.text = artist.name
