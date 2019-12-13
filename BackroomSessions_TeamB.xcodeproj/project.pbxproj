@@ -35,6 +35,7 @@
 		BFF8DBB123A34D8300EFD04B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8DBB023A34D8300EFD04B /* Extensions.swift */; };
 		BFF8DBB323A34DFC00EFD04B /* EventAlbumImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8DBB223A34DFC00EFD04B /* EventAlbumImagesCell.swift */; };
 		BFF8DBB523A362C400EFD04B /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8DBB423A362C400EFD04B /* EventTableViewController.swift */; };
+		BFF8DBB723A36AA400EFD04B /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8DBB623A36AA400EFD04B /* EventsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		BFF8DBB023A34D8300EFD04B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BFF8DBB223A34DFC00EFD04B /* EventAlbumImagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAlbumImagesCell.swift; sourceTree = "<group>"; };
 		BFF8DBB423A362C400EFD04B /* EventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
+		BFF8DBB623A36AA400EFD04B /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				2E288AB823993EE900302D2C /* ArtistCollectionViewCell.swift */,
 				AB55890D239EE9AE004EB2DE /* RegistrationView.swift */,
 				AB116C2123A1C7FC0014566D /* ProfileView.swift */,
+				BFF8DBB623A36AA400EFD04B /* EventsTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			files = (
 				BFF8DBB123A34D8300EFD04B /* Extensions.swift in Sources */,
 				AB116C1F23A0D5C40014566D /* Artist+CoreDataClass.swift in Sources */,
+				BFF8DBB723A36AA400EFD04B /* EventsTableViewCell.swift in Sources */,
 				BF2F15E82395A74600AF39C7 /* BackroomSessions_TeamB.xcdatamodeld in Sources */,
 				BF2F15E02395A74600AF39C7 /* AppDelegate.swift in Sources */,
 				BF9A0E532397F98F001CA797 /* ContainerController.swift in Sources */,

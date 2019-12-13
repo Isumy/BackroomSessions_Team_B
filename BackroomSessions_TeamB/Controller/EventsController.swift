@@ -138,6 +138,7 @@ class EventsController: UIViewController, UICollectionViewDelegate, UICollection
     
     //Segue to EventTableViewViewController
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       
         let eventTableViewController = EventTableViewController()
        // detailViewController.viewArtist = filtered[indexPath.row]
         //eventTableViewController.delegate = self.delegate
