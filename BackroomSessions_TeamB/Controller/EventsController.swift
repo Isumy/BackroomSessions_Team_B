@@ -13,7 +13,20 @@ class EventsController: UIViewController, UICollectionViewDelegate, UICollection
     //Properties
     
     let pastEventImagesArray = ["past1", "past2", "past3", "past4"]
-    let upcomingEventImagesArray = ["Nov19", "Nov20", "Nov23"]
+    //let upcomingEventImagesArray = ["Nov19", "Nov20", "Nov23"]
+    let persistenceManager: PersistenceManager!
+    
+    //Init
+    init(persistenceManager: PersistenceManager){
+        self.persistenceManager = persistenceManager
+        super.init(nibName:nil, bundle:nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    var upcomingEventsImagesArray: [Events] = []
     
     let collectionView: UICollectionView = {
         
@@ -45,7 +58,7 @@ class EventsController: UIViewController, UICollectionViewDelegate, UICollection
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        
+        upcomingEventsImagesArray = persistenceManager.fetch(Events.self)
         //Calling this method to makle changes to the UI
         configureEventsUI()
     }
@@ -103,7 +116,7 @@ class EventsController: UIViewController, UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 1
         {
-            return upcomingEventImagesArray.count
+            return upcomingEventsImagesArray.count
         }
         return 1
     }
@@ -111,7 +124,7 @@ class EventsController: UIViewController, UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 1{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: albumsCellId, for: indexPath) as! EventAlbumImagesCell
-            cell.album = upcomingEventImagesArray[indexPath.item]
+            cell.album = upcomingEventsImagesArray[indexPath.item].imageName
             
             
             return cell

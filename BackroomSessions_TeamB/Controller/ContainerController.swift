@@ -105,7 +105,7 @@ class ContainerController: UIViewController{
             //Go to Event controller
             print("Show Events Controller")
             //presenting Events controller
-            let controller = EventsController()
+            let controller = EventsController(persistenceManager: PersistenceManager.shared)
             present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
         case .Artist:
             //Go to Artist controller

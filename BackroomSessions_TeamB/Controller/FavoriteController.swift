@@ -57,8 +57,9 @@ class FavoriteController: UIViewController, UICollectionViewDataSource, UICollec
     func createEvent(){
         let event = Events(context: persistenceManager.context)
         event.imageEvent = UIImageJPEGRepresentation(#imageLiteral(resourceName: "footer-logo"), 1)! as NSData
-        event.title = "Best of Backroom Block Party"
-        event.date = "12/28/2019"
+        event.imageName = "Nov19"
+        event.title = "Nov 19 Show"
+        event.date = "11/29/2019"
         event.city = "10000 SW 56 ST MIAMI, FL 33165"
         event.favorite = true
         persistenceManager.save()
