@@ -28,13 +28,13 @@ class ArtistDetailController: UIViewController, UIImagePickerControllerDelegate,
     
     // Functions
     
-    //This method configure the way the UI for the EventsViewController will look like.
+    //This method configure the way the UI for the ArtistDetailController will look like.
     func configureDetailUI() {
         guard let artist = viewArtist else { return }
         let background = UIColor(patternImage: UIImage(named: "background") ?? UIImage())
         view.backgroundColor = background
         
-        //Embedding Navigatoion Controller to Events ViewController
+        //Embedding Navigatoion Controller to Artist Detail ViewController
         navigationController?.navigationBar.barTintColor = .darkGray
         
         navigationController?.navigationBar.barStyle = .black
@@ -126,13 +126,5 @@ class ArtistDetailController: UIViewController, UIImagePickerControllerDelegate,
         textStyle(artistYoutubeLabel)
         textStyle(artistSoundcloudLabel)
         textStyle(artistWebsiteLabel)
-        
-        //let viewsDictionary = ["label1": artistEmailLabel, "label2": artistNumberLabel, "label3": artistYoutubeLabel, "label4": artistSoundcloudLabel, "label5": artistWebsiteLabel]
-        
-//        for label in viewsDictionary.keys {
-//            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[\(label)]|", options: [], metrics: nil, views: viewsDictionary as Any as! [String : Any]))
-//        }
-//
-//        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-150-[label1]-20-[label2]-20-[label3]-20-[label4]-20-[label5]", options: [], metrics: nil, views: viewsDictionary as Any as! [String : Any]))
     }
 }
