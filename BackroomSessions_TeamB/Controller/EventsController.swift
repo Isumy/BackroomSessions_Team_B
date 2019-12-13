@@ -61,6 +61,8 @@ class EventsController: UIViewController, UICollectionViewDelegate, UICollection
         upcomingEventsImagesArray = persistenceManager.fetch(Events.self)
         //Calling this method to makle changes to the UI
         configureEventsUI()
+        
+        
     }
     
     
@@ -147,6 +149,19 @@ class EventsController: UIViewController, UICollectionViewDelegate, UICollection
             return UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 0)
         }
         return UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 0)
+    }
+    
+    //Segue to EventTableViewViewController
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let eventTableViewController = EventTableViewController()
+        // detailViewController.viewArtist = filtered[indexPath.row]
+        //eventTableViewController.delegate = self.delegate
+        eventTableViewController.rootController = self
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: {
+            //self.filtered = self.persistenceManager.fetch()
+            self.navigationController!.pushViewController(eventTableViewController, animated: true)
+        })
     }
 }
 /*
