@@ -101,10 +101,21 @@ class RegistrationController: UIViewController, UIImagePickerControllerDelegate,
         artist.registered = true
         persistenceManager.save()
         
-        var alert = UIAlertController(title: "Success",
+        let ac = UIAlertController(title: "Success",
                                       message: "You have been registered!",
                                       preferredStyle: .alert)
-        self.present(alert, animated: true, completion:{self.handleDismissVC()})
+        
+        let closeAction = UIAlertAction(title: "Awesome :)", style: .cancel,
+                                        handler: { (action) -> Void in
+                                            let detailViewController = ArtistDetailController()
+                                            detailViewController.viewArtist = artist
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: {
+                                                self.navigationController!.pushViewController(detailViewController, animated: true)
+                                            })
+        })
+        ac.addAction(closeAction)
+        
+        self.present(ac, animated: true, completion: nil)
     }
     
     //Functions
