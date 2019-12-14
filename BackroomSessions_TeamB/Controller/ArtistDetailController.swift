@@ -51,7 +51,7 @@ class ArtistDetailController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     func textStyle(_ label: UILabel) {
-        label.font = UIFont(name: "Avenir", size: 20)
+        label.font = UIFont(name: "Avenir", size: 25)
         label.textColor = .white
         label.textAlignment = .left
         label.numberOfLines = 3
@@ -71,45 +71,90 @@ class ArtistDetailController: UIViewController, UIImagePickerControllerDelegate,
         }()
         
         let artistNameLabel: UILabel = {
-            let label = UILabel(frame: CGRect(x: 0, y: 275.0, width:UIScreen.main.bounds.width, height: 60.0))
+            let label = UILabel(frame: CGRect(x: 0, y: 285.0, width:UIScreen.main.bounds.width, height: 30.0))
             label.text = "Name: \(artist.name ?? "")"
             
             return label
         }()
         
         let artistEmailLabel: UILabel = {
-            let label = UILabel(frame: CGRect(x: 0, y: 340.0, width:UIScreen.main.bounds.width, height: 60.0))
+            let label = UILabel(frame: CGRect(x: 0, y: 330.0, width:UIScreen.main.bounds.width, height: 30.0))
             label.text = "Email: \(artist.email ?? "")"
             
             return label
         }()
         
         let artistNumberLabel: UILabel = {
-            let label = UILabel(frame: CGRect(x: 0, y: 405.0, width:UIScreen.main.bounds.width, height: 60.0))
+            let label = UILabel(frame: CGRect(x: 0, y: 375.0, width:UIScreen.main.bounds.width, height: 30.0))
             label.text = "Number: \(artist.phoneNumber ?? "")"
             
             return label
         }()
         
         let artistYoutubeLabel: UILabel = {
-            let label = UILabel(frame: CGRect(x: 0, y: 470.0, width:UIScreen.main.bounds.width, height: 60.0))
-            label.text = "Youtube Link: \(artist.youtubeLink?.relativeString ?? "")"
+            let label = UILabel(frame: CGRect(x: 0, y: 420.0, width:UIScreen.main.bounds.width, height: 30.0))
+            label.text = "Youtube Link:"
             
             return label
+        }()
+        
+        let youTubeLink: UITextView = {
+            let link = UITextView(frame: CGRect(x: 0, y: 455.0, width:UIScreen.main.bounds.width, height: 30.0))
+            link.text = artist.youtubeLink?.relativeString ?? ""
+            link.dataDetectorTypes = UIDataDetectorTypes.link
+            link.isEditable = false
+            
+            link.font = UIFont(name: "Avenir", size: 12)
+            link.backgroundColor = UIColor(red: 240/255, green: 96/255, blue: 47/255, alpha: 0.8)
+            link.tintColor = .white
+            link.textAlignment = .left
+            link.adjustsFontForContentSizeCategory = true
+            
+            return link
         }()
         
         let artistSoundcloudLabel: UILabel = {
-            let label = UILabel(frame: CGRect(x: 0, y: 535.0, width:UIScreen.main.bounds.width, height: 60.0))
-            label.text = "Soundcloud Link: \(artist.soundcloudLink?.relativeString ?? "")"
+            let label = UILabel(frame: CGRect(x: 0, y: 500.0, width:UIScreen.main.bounds.width, height: 30.0))
+            label.text = "Soundcloud Link:"
             
             return label
         }()
         
+        let soundcloudLink: UITextView = {
+            let link = UITextView(frame: CGRect(x: 0, y: 535.0, width:UIScreen.main.bounds.width, height: 30.0))
+            link.text = artist.soundcloudLink?.relativeString ?? ""
+            link.dataDetectorTypes = UIDataDetectorTypes.link
+            link.isEditable = false
+            
+            link.font = UIFont(name: "Avenir", size: 12)
+            link.backgroundColor = UIColor(red: 240/255, green: 96/255, blue: 47/255, alpha: 0.8)
+            link.tintColor = .white
+            link.textAlignment = .left
+            link.adjustsFontForContentSizeCategory = true
+            
+            return link
+        }()
+        
         let artistWebsiteLabel: UILabel = {
-            let label = UILabel(frame: CGRect(x: 0, y: 600.0, width:UIScreen.main.bounds.width, height: 60.0))
-            label.text = "Website: \(artist.websiteLink?.relativeString ?? "")"
+            let label = UILabel(frame: CGRect(x: 0, y: 570.0, width:UIScreen.main.bounds.width, height: 30.0))
+            label.text = "Website:"
             
             return label
+        }()
+        
+        let websiteLink: UITextView = {
+            let link = UITextView(frame: CGRect(x: 0, y: 615.0, width:UIScreen.main.bounds.width, height: 30.0))
+            link.text = artist.websiteLink?.relativeString ?? ""
+            link.dataDetectorTypes = UIDataDetectorTypes.link
+            link.isEditable = false
+            
+            link.font = UIFont(name: "Avenir", size: 12)
+            link.backgroundColor = UIColor(red: 240/255, green: 96/255, blue: 47/255, alpha: 0.8)
+            link.tintColor = .white
+            link.textAlignment = .left
+            link.adjustsFontForContentSizeCategory = true
+            
+            return link
         }()
         
         view.addSubview(artistImageView)
@@ -117,8 +162,11 @@ class ArtistDetailController: UIViewController, UIImagePickerControllerDelegate,
         view.addSubview(artistEmailLabel)
         view.addSubview(artistNumberLabel)
         view.addSubview(artistYoutubeLabel)
+        view.addSubview(youTubeLink)
         view.addSubview(artistSoundcloudLabel)
+        view.addSubview(soundcloudLink)
         view.addSubview(artistWebsiteLabel)
+        view.addSubview(websiteLink)
         
         textStyle(artistNameLabel)
         textStyle(artistEmailLabel)
