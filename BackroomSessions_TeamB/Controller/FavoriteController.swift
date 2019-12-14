@@ -33,9 +33,9 @@ class FavoriteController: UIViewController, UICollectionViewDataSource, UICollec
     override func loadView() {
         super.loadView()
         events = persistenceManager.fetch(Events.self)
-//        events.filter { (event: Events) -> Bool in
-//            return event.favorite(of: true, range: nil, locale: nil) != nil
-//        }
+        events = events.filter { (event: Events) -> Bool in
+            return event.favorite == true
+        }
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
