@@ -107,10 +107,9 @@ class RegistrationController: UIViewController, UIImagePickerControllerDelegate,
         
         let closeAction = UIAlertAction(title: "Awesome :)", style: .cancel,
                                         handler: { (action) -> Void in
-                                            let detailViewController = ArtistDetailController()
-                                            detailViewController.viewArtist = artist
+                                            let artistViewController = ArtistsController(persistenceManager: PersistenceManager.shared)
                                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: {
-                                                self.navigationController!.pushViewController(detailViewController, animated: true)
+                                                self.navigationController!.pushViewController(artistViewController, animated: true)
                                             })
         })
         ac.addAction(closeAction)
