@@ -33,6 +33,9 @@ class FavoriteController: UIViewController, UICollectionViewDataSource, UICollec
     override func loadView() {
         super.loadView()
         events = persistenceManager.fetch(Events.self)
+        events = events.filter { (event: Events) -> Bool in
+            return event.favorite == true
+        }
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -136,23 +139,24 @@ class FavoriteController: UIViewController, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // Create an instance of the default ArtistCollectionViewCell
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ArtistCollectionViewCell
-        
-        /* Set the text on the cell with the name of the artist that
-         is at the nth index of the artists list, where n = row */
-        let artist = events[indexPath.row]
-        
-        // Display the Artist name in each cell, going through every Artist
-        cell.artistName.text = artist.title
-        cell.artistName.font = UIFont(name: "Avenir", size: 25)
-        
-        // Cell styling
-        cell.contentView.layer.cornerRadius = 4.0
-        cell.contentView.layer.borderWidth = 1.0
-        cell.contentView.layer.borderColor = UIColor(red: 240/255, green: 96/255, blue: 47/255, alpha: 0.8).cgColor
-        cell.contentView.layer.masksToBounds = false
-        
-        return cell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ArtistCollectionViewCell
+            
+            /* Set the text on the cell with the name of the artist that
+             is at the nth index of the artists list, where n = row */
+            let event = events[indexPath.row]
+            
+            // Display the Artist name in each cell, going through every Artist
+            cell.artistName.text = event.title
+            cell.artistName.font = UIFont(name: "Avenir", size: 25)
+            
+            // Cell styling
+            cell.contentView.layer.cornerRadius = 4.0
+            cell.contentView.layer.borderWidth = 1.0
+            cell.contentView.layer.borderColor = UIColor(red: 240/255, green: 96/255, blue: 47/255, alpha: 0.8).cgColor
+            cell.contentView.layer.masksToBounds = false
+            
+            return cell
+    
     }
     
     //Selector function to dismiss the ViewController

@@ -56,19 +56,32 @@ class EventsController: UIViewController, UICollectionViewDelegate, UICollection
     
     //Init
     
+    override func loadView() {
+        super.loadView()
+        createEvent(imgName: "Nov19", title: "Greetings From Chicago!", date: "11/19/2019", city: "Chicago", fav: true)
+        createEvent(imgName: "Nov20", title: "Greetings From Philly!", date: "11/19/2019", city: "Philadelphia", fav: false)
+        createEvent(imgName: "Nov23", title: "Greetings From New York!", date: "11/23/2019", city: "New York", fav:false)
+    }
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         upcomingEventsImagesArray = persistenceManager.fetch(Events.self)
+        
         //Calling this method to makle changes to the UI
         configureEventsUI()
-        
-        
     }
     
-    
-    
-    
     //Functions
+    func createEvent(imgName: String, title: String, date: String, city: String, fav: Bool){
+        let event = Events(context: persistenceManager.context)
+        event.imageEvent = UIImageJPEGRepresentation(#imageLiteral(resourceName: "footer-logo"), 1)! as NSData
+        event.imageName = imgName
+        event.title = title
+        event.date = date
+        event.city = city
+        event.favorite = fav
+        persistenceManager.save()
+    }
     
     //This method configure the way the UI for the EventsViewController will look like.
     func configureEventsUI(){
@@ -154,7 +167,7 @@ class EventsController: UIViewController, UICollectionViewDelegate, UICollection
     //Segue to EventTableViewViewController
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let eventTableViewController = EventTableViewController()
+        let eventTableViewController = EventTableViewController(persistenceManager: PersistenceManager.shared)
         // detailViewController.viewArtist = filtered[indexPath.row]
         //eventTableViewController.delegate = self.delegate
         eventTableViewController.rootController = self
