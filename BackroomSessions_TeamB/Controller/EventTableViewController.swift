@@ -12,10 +12,7 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
     
     
     //Properties
-    /////*****Only for testing
-    
-    
-    //********
+    let persistenceManager: PersistenceManager!
     
     var eventsTableView = UITableView()
     var rootController: UIViewController?
@@ -29,28 +26,26 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         return imageView
     }()
     
-    /////*****Only for testing, delete after core data
-    var eventArray = [EventModal]()
+    var eventArray = [Events]()
     
-    //********
     //Initialize
+    init(persistenceManager: PersistenceManager){
+        self.persistenceManager = persistenceManager
+        super.init(nibName:nil, bundle:nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
-        //view.backgroundColor = .red
-        
-        /////*****Only for testing, needs to be deleted after implementing core data
-        
-        eventArray.append(EventModal(eventImage: #imageLiteral(resourceName: "nov20"), eventTitle: "Tampa Event", eventCity: "Tampa"))
-        eventArray.append(EventModal(eventImage: #imageLiteral(resourceName: "Nov23"), eventTitle: "New York Event", eventCity: "New York"))
-        eventArray.append(EventModal(eventImage: #imageLiteral(resourceName: "nov20"), eventTitle: "MiamiEvent", eventCity: "Miami"))
-        
-        //********
+        eventArray = persistenceManager.fetch(Events.self)
     }
+    
+    
     //functions
-    
-    
     func setTableView(){
         //creating tableview to display the events
         eventsTableView.frame = self.view.frame
@@ -76,9 +71,9 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = eventsTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? EventsTableViewCell else {fatalError("Unable to create cell") }
-        cell.eventImage.image = eventArray[indexPath.row].eventImage
-        cell.titleLabel.text = eventArray[indexPath.row].eventTitle
-        cell.cityLabel.text = eventArray[indexPath.row].eventCity
+        cell.eventImage.image = UIImage(data:  eventArray[indexPath.row].imageEvent! as Data)
+        cell.titleLabel.text = eventArray[indexPath.row].title
+        cell.cityLabel.text = eventArray[indexPath.row].city
         
         //cell.textLabel?.text = "\(indexPath.row)"
         
