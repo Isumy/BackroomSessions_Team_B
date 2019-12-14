@@ -50,7 +50,7 @@ class FavoriteController: UIViewController, UICollectionViewDataSource, UICollec
         super.viewDidLoad()
         configureCollectionView()
         configureFavoriteUI()
-        //createEvent()
+        createEvent()
     }
     
     // Functions
